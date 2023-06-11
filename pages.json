@@ -1,0 +1,76 @@
+{
+	"pages": [{
+		"path": "pages/login/login",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/mobilelogin/mobilelogin",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/reg/reg",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/index/index",
+		"style": {
+			
+		}
+	}, {
+		"path": "pages/shop/shop",
+		"style": {
+			
+		}
+	},{
+		"path": "pages/dongtai/dongtai",
+		"style": {
+			
+		}
+	},{
+		"path": "pages/my/my",
+		"style": {
+	
+		}
+	},{
+		"path": "pages/add/add",
+		"style": {
+		}
+	}],
+	"globalStyle": {
+
+	},
+	"tabBar": {
+		"selectedColor": "#ff9bb9",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "./static/tabbar/gitlab.png",
+				"selectedIconPath": "./static/tabbar/gitlab-select.png"
+			}, {
+				"pagePath": "pages/shop/shop",
+				"text": "会员购",
+				"iconPath": "./static/tabbar/wind.png",
+				"selectedIconPath": "./static/tabbar/wind-select.png"
+			}, {
+				"pagePath": "pages/add/index",
+				"text": "添加",
+				"iconPath": "./static/tabbar/添加_add.png",
+				"selectedIconPath": "./static/tabbar/添加_add.png"
+			},
+			{
+				"pagePath": "pages/dongtai/dongtai",
+				"text": "动态",
+				"iconPath": "./static/tabbar/friend.png",
+				"selectedIconPath": "./static/tabbar/friend-select.png"
+			}, {
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "./static/tabbar/tv.png",
+				"selectedIconPath": "./static/tabbar/tv-select.png"
+			}
+		]
+	}
+}

@@ -1,0 +1,126 @@
+<!--pages/login/login.wxml-->
+<template>
+	<view>
+		<view class="">
+			
+		</view>
+		<navigator url="/pages/index/index" open-type="switchTab">我是login</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		name: "login",
+		data() {
+			return {
+
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	/* pages/login/login.wxss */
+	/* 页面颜色 */
+	page {
+		background-color: #f1f2f3;
+	}
+
+	.top {
+		width: 100%;
+		height: 60rpx;
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.top-left {
+		display: flex;
+		justify-content: space-around;
+		margin-left: 20rpx;
+	}
+
+	.top-left-img {
+		width: 40rpx;
+		height: 40rpx;
+	}
+
+	.top-left-word {
+		font-size: 30rpx;
+	}
+
+	.top-right {
+		margin-right: 20rpx;
+		font-size: 30rpx;
+	}
+
+
+	/* 图片 */
+	.img {
+		width: 100%;
+		height: 200rpx;
+		background-color: skyblue;
+	}
+
+
+
+
+	/* 地区 */
+	.zone {
+		width: 100%;
+		height: 80rpx;
+		font-size: 35rpx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 2rpx solid #ccc;
+		border-bottom: 2rpx solid #ccc;
+	}
+
+	.zone-left {
+		margin-left: 30rpx;
+	}
+
+	.zone-right {
+		margin-right: 20rpx;
+	}
+
+
+
+	/* 账号密码 */
+
+	.user-box {
+		width: 100%;
+		height: 80rpx;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		border-bottom: 2rpx solid #ccc;
+	}
+
+	.user {
+		width: 80%;
+		height: 80rpx;
+		margin-left: 80rpx;
+		caret-color: #ff9bb9;
+		/* background-color: skyblue; */
+	}
+
+	.pass-box {
+		width: 100%;
+		height: 80rpx;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		border-bottom: 2rpx solid #ccc;
+	}
+
+	.pass {
+		width: 80%;
+		height: 80rpx;
+		margin-left: 80rpx;
+		caret-color: #ff9bb9;
+		/* background-color: pink; */
+	}
+</style>
