@@ -34,10 +34,13 @@
 		"style": {
 			"navigationStyle": "custom"
 		}
-	}, {
+	},{
 		"path": "pages/add/add",
-		"style": {}
+		"style": {
+			
+		}
 	}],
+	
 	"globalStyle": {
 
 	},
@@ -54,10 +57,10 @@
 				"iconPath": "./static/tabbar/wind.png",
 				"selectedIconPath": "./static/tabbar/wind-select.png"
 			}, {
-				"pagePath": "pages/add/index",
+				"pagePath": "pages/add/add",
 				"text": "添加",
-				"iconPath": "./static/tabbar/添加_add.png",
-				"selectedIconPath": "./static/tabbar/添加_add.png"
+				"iconPath": "./static/tabbar/add.png",
+				"selectedIconPath": "./static/tabbar/add.png"
 			},
 			{
 				"pagePath": "pages/dongtai/dongtai",

@@ -2,8 +2,12 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import request from './API/requset.js'
 
 Vue.config.productionTip = false
+Vue.prototype.$get = request.get
+Vue.prototype.$post = request.post
+Vue.prototype.$put = request.put
 
 App.mpType = 'app'
 

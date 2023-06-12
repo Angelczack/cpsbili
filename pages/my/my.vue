@@ -9,7 +9,8 @@
 				<view style="display: flex; flex: 1; align-items: center;">
 					<view
 						style="width: 150rpx; height:150rpx; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
-						<open-data type="userAvatarUrl"></open-data>
+						<!-- <open-data type="userAvatarUrl"></open-data> -->
+						<image :src="'https://images.weserv.nl/?url='+usersImg.imgurl" mode=""></image>
 					</view>
 					<view style="margin-left: 20rpx;">
 						<open-data type="userNickName" style="font-size: 30rpx;"></open-data>
@@ -353,15 +354,32 @@
 				}, {
 					src: "/static/my/设置_setting-two.png",
 					word: "设置"
-				}]
+				}],
+				usersImg: []
 			}
 		},
-		methods:{
-			  gotosetting(){
-			    uni.navigateTo({
-			      url: '/pages/setting/setting'
-			    })
-			  },
+		async mounted() { //async ...await  异步ajax请求参数
+			await uni.request({
+				url: "https://api.uomg.com/api/rand.avatar",
+				method:"GET",
+				data:{
+					sort:"动漫女",
+					format:"json"
+				},
+				success: (res) => {
+					console.log(res);
+					this.usersImg = res.data;
+					console.log(this.usersImg);
+				}
+			})
+		},
+		methods: {
+			gotosetting() {
+				uni.navigateTo({
+					url: '/pages/setting/setting',
+					methods:"GET"
+				})
+			},
 		}
 	}
 </script>
@@ -370,7 +388,9 @@
 	/* pages/my/my.wxss */
 
 	/* 页面颜色 */
-	page{background-color: #fff;} 
+	page {
+		background-color: #fff;
+	}
 
 	.user {
 		width: 100%;
