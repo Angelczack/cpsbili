@@ -7,37 +7,36 @@
 	}, {
 		"path": "pages/mobilelogin/mobilelogin",
 		"style": {
-			
+			"navigationStyle": "custom"
 		}
 	}, {
 		"path": "pages/reg/reg",
 		"style": {
-			
+
 		}
 	}, {
 		"path": "pages/index/index",
 		"style": {
-			
+			"navigationStyle": "custom"
 		}
 	}, {
 		"path": "pages/shop/shop",
 		"style": {
-			
+			"navigationStyle": "custom"
 		}
-	},{
+	}, {
 		"path": "pages/dongtai/dongtai",
 		"style": {
-			
+			"navigationStyle": "custom"
 		}
-	},{
+	}, {
 		"path": "pages/my/my",
 		"style": {
-	
+			"navigationStyle": "custom"
 		}
-	},{
+	}, {
 		"path": "pages/add/add",
-		"style": {
-		}
+		"style": {}
 	}],
 	"globalStyle": {
 

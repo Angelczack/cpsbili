@@ -11,7 +11,7 @@
 		    <view claass="top-left-word">手机号登陆注册</view>
 		  </view>
 		
-		  <view class="top-right" bindtap="gotologin">密码登录</view>
+		  <view class="top-right" @click="gotologin">密码登录</view>
 		</view>
 		
 		
@@ -49,7 +49,7 @@
 		<!-- 注册与登录 -->
 		<view style="display: flex; margin-top: 40rpx;">
 		  <button style="width: 45%; height: 80rpx; background-color: #f1f2f3; border: 2rpx solid #ff9bb9; text-align: center; line-height: 80rpx;" plain="false">注册</button>
-		  <button style="width: 45%; height: 80rpx; background-color: #ff9bb9; border: none; text-align: center; line-height: 80rpx; color: #fff;" plain="false" bindtap="gotoindex">登录</button>
+		  <button style="width: 45%; height: 80rpx; background-color: #ff9bb9; border: none; text-align: center; line-height: 80rpx; color: #fff;" plain="false" @click="gotoindex">登录</button>
 		</view>
 		
 		
@@ -68,4 +68,106 @@
 		</view>
 	</view>
 </template>
+
+<script>
+	export default {
+		name:"mobilelogin",
+		data() {
+			return{
+				
+			}
+		},
+		methods:{
+			gotologin() {
+				uni.navigateTo({
+					url:"/pages/login/login"
+				})
+			},
+			gotoindex() {
+				uni.switchTab({
+					url:"/pages/index/index"
+				})
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	page{
+	  background-color: #f1f2f3;
+	}
+	
+	.top{
+	  width: 100%;
+	  height: 60rpx;
+	  background-color: #fff;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	.top-left{display: flex; justify-content: space-around; margin-left: 20rpx;}
+	.top-left-img{width: 40rpx; height: 40rpx;}
+	.top-left-word{font-size: 30rpx;}
+	.top-right{margin-right: 20rpx; font-size: 30rpx;}
+	
+	
+	/* 图片 */
+	.img{
+	  width: 100%;
+	  height: 200rpx;
+	  background-color: skyblue;
+	}
+	
+	
+	
+	
+	/* 地区 */
+	.zone{
+	  width: 100%;
+	  height: 80rpx;
+	  font-size: 35rpx;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  border-top: 2rpx solid #ccc;
+	  border-bottom: 2rpx solid #ccc;
+	}
+	.zone-left{margin-left: 30rpx;}
+	.zone-right{margin-right: 20rpx;}
+	
+	
+	
+	/* 账号密码 */
+	
+	.user-box{
+	  width: 100%;
+	  height: 80rpx;
+	  background-color: #fff;
+	  display: flex;
+	  align-items: center;
+	  border-bottom: 2rpx solid #ccc;
+	}
+	.user{
+	  width: 80%;
+	  height: 80rpx;
+	  margin-left: 80rpx;
+	  caret-color: #ff9bb9;
+	  /* background-color: skyblue; */
+	}
+	.pass-box{
+	  width: 100%;
+	  height: 80rpx;
+	  background-color: #fff;
+	  display: flex;
+	  align-items: center;
+	  border-bottom: 2rpx solid #ccc;
+	}
+	.pass{
+	  width: 80%;
+	  height: 80rpx;
+	  margin-left: 48rpx;
+	  caret-color: #ff9bb9;
+	  /* background-color: pink; */
+	}
+</style>
 
