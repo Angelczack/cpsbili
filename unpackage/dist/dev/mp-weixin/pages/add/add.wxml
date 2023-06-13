@@ -1,0 +1,1 @@
+<view><button data-event-opts="{{[['tap',[['addImgs',['$event']]]]]}}" bindtap="__e">上传</button><button data-event-opts="{{[['tap',[['addcream',['$event']]]]]}}" bindtap="__e">添加</button><map class="vue-ref" id="map1" data-ref="map1"></map></view>

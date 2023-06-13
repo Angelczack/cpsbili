@@ -1,0 +1,250 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 全局设置 */
+page.data-v-57280228 {
+	margin: 0;
+	padding: 0;
+}
+/* 上方区域 */
+.searchbar.data-v-57280228 {
+	width: 100%;
+	height: 100px;
+	background-color: salmon;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+/* 用户头像 */
+.user-img.data-v-57280228 {
+	width: 50px;
+	height: 50px;
+}
+.user-img>image.data-v-57280228 {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+/* 输入框 */
+#searchs.data-v-57280228 {
+	width: 180px;
+	height: 40px;
+	background-color: #fff;
+	border-radius: 50px;
+}
+/* 首页功能按钮 */
+.globbtn.data-v-57280228 {
+	width: 120px;
+	height: 40px;
+	background-color: pink;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.globbtn>image.data-v-57280228 {
+	width: 30px;
+	height: 30px;
+	background-color: skyblue;
+}
+/* 去除横向滚动条的滑动条 */
+.data-v-57280228 ::-webkit-scrollbar {
+	display: block;
+	width: 0px !important;
+	height: 0px !important;
+}
+.navbar.data-v-57280228 {
+	font-size: 18px;
+	margin-top: 5px;
+}
+/* 轮播 */
+.swiper.data-v-57280228{
+	width: 100%;
+}
+.swiper-item.data-v-57280228{
+	width: 95%;
+}
+.swiper-item image.data-v-57280228{
+	width: 100%;
+	height: 200px;
+		display: flex;
+		justify-content: center;
+}
+/* 视频列表 */
+.videos.data-v-57280228{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top:20rpx;
+}
+.v-left.data-v-57280228{
+  width: 45%;
+  height:260rpx;
+  /* background-color: pink; */
+  border-radius: 20rpx;
+}
+.v-left-img.data-v-57280228{
+  height: 190rpx;
+}
+.v-left-word.data-v-57280228{
+  font-size: 25rpx;
+}
+.v-right.data-v-57280228{
+  width: 45%;
+  height:260rpx;
+  /* background-color: skyblue; */
+  border-radius: 20rpx;
+}
+.v-right-img.data-v-57280228{
+  height: 190rpx;
+}
+.v-right-word.data-v-57280228{
+  width: 100%;
+  font-size: 25rpx;
+  /* background-color: pink; */
+}
+

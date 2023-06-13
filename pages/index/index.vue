@@ -4,11 +4,11 @@
 		<view class="searchbar">
 			<!-- 用户头像 -->
 			<view class="user-img">
-				<image src="/static/userimg.JPG"></image>
+				<image :src="'https://images.weserv.nl/?url='+usericon.imgurl"></image>
 			</view>
 			<!-- 搜索框 -->
 			<!-- <image src="" mode=""></image> -->
-			<input type="text" id="searchs" placeholder="请输入">
+			<input type="text" id="searchs" placeholder="请输入" />
 			<!-- <u-search placeholder="日照香炉生紫烟" v-model="keyword"></u-search> -->
 
 			<!-- 首页功能按钮 -->
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { onMounted } from "vue"
 	export default {
 		name: "index",
 		data() {
@@ -124,8 +125,20 @@
 				      // src2:"https://i1.hdslb.com/bfs/archive/ad675b47b656f6517750193babfb72abd12415e9.jpg",
 					  src2:"/static/indexs/10.jpg",
 				      word2:"若不是你突然闯进我鸡窝……"
-				    }]
+				    }],
+					// 用户头像
+					usericon:[]
 			}
+		},
+		 mounted() {
+			 uni.getStorage({
+				key:'usericon',
+				success: (res) => {
+					console.log(res);
+					this.usericon = res.data;
+					console.log(this.usericon);
+				}
+			})
 		}
 	}
 </script>

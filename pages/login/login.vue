@@ -11,7 +11,7 @@
 		    <!-- <view class="top-left-img">
 		      <image src="/images/login/返回_return.png" style="width: 100%; height: 100%;"/>
 		    </view> -->
-		    <view claass="top-left-word">密码登录</view>
+		    <view class="top-left-word">密码登录</view>
 		  </view>
 		
 		  <view class="top-right" @click="gotologin">短信登录</view>
@@ -30,12 +30,16 @@
 		<view>
 		<view class="user-box">
 		  <text style="margin-left: 30rpx; font-size: 30rpx; white-space: nowrap;">账号</text>
-		  <input type="text" class="user" placeholder="请输入手机号或邮箱" placeholder-style="font-size:30rpx;" maxlength="10"/>
+		  <form action="checklogin.php" method="post">
+			  <input type="text" class="user"  v-model="userNum" placeholder="请输入手机号或邮箱" placeholder-style="font-size:30rpx;" maxlength="10"/>
+		  </form>
 		</view>
 		  
 		  <view class="pass-box">
 		  <text style="margin-left: 30rpx; font-size: 30rpx; white-space: nowrap;">密码</text>
-		    <input type="password" class="pass" placeholder="请输入密码" placeholder-style="font-size:30rpx;" maxlength="8"/>
+		  <form action="checklogin.php" method="post">
+			  <input type="password" class="pass" v-model="userPass" placeholder="请输入密码" placeholder-style="font-size:30rpx;" maxlength="8"/>
+		  </form>
 		    <text style="font-size: 25rpx; white-space: nowrap; margin-right: 20rpx; color: #ff9bb9;">忘记密码?</text>
 		  </view>
 		  
@@ -70,7 +74,8 @@
 		name: "login",
 		data() {
 			return {
-
+			userNum:"",
+			userPass:""
 			}
 		},
 		methods:{
@@ -82,11 +87,25 @@
 			  })
 			},
 			gotoindex() {
-				uni.switchTab({
-					url:"/pages/index/index",
-					animationType:'pop-in',
-					animationDuration:300
-				})
+				console.log(this.userNum);
+				if(this.userNum.length ==0) {
+					uni.showToast({
+						title:'请输入账号'
+					})
+				}
+				else if(this.userPass.length ==0) {
+					uni.showToast({
+						title:'请输入密码'
+					})
+				}
+				else{
+					uni.switchTab({
+						url:"/pages/index/index",
+						animationType:'pop-in',
+						animationDuration:300
+					})
+				}
+				
 			}
 		}
 	}

@@ -10,7 +10,8 @@
 					<view
 						style="width: 150rpx; height:150rpx; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
 						<!-- <open-data type="userAvatarUrl"></open-data> -->
-						<image :src="'https://images.weserv.nl/?url='+usersImg.imgurl" mode=""></image>
+						<image :src="'https://images.weserv.nl/?url='+usersImg.imgurl" mode=""
+							style="width: 100%; height: 100%;"></image>
 					</view>
 					<view style="margin-left: 20rpx;">
 						<open-data type="userNickName" style="font-size: 30rpx;"></open-data>
@@ -212,7 +213,7 @@
 				<view class="more-con">
 					<view class="more-left">
 						<view class="more-left-img">
-							<image src="/images/my/机器人1_robot-one.png" style="width: 100%; height: 100%;" />
+							<image src="/static/my/robot-one.png" style="width: 100%; height: 100%;" />
 						</view>
 						<view class="more-left-word">联系客服</view>
 					</view>
@@ -223,7 +224,7 @@
 				<view class="more-con">
 					<view class="more-left">
 						<view class="more-left-img">
-							<image src="/images/my/耳机_headset.png" style="width: 100%; height: 100%;" />
+							<image src="/static/my/headset.png" style="width: 100%; height: 100%;" />
 						</view>
 						<view class="more-left-word">听视频</view>
 					</view>
@@ -234,7 +235,7 @@
 				<view class="more-con">
 					<view class="more-left">
 						<view class="more-left-img">
-							<image src="/images/my/树叶_sleaves.png" style="width: 100%; height: 100%;" />
+							<image src="/static/my/leaves.png" style="width: 100%; height: 100%;" />
 						</view>
 						<view class="more-left-word">青少年守护</view>
 					</view>
@@ -242,10 +243,10 @@
 					<view class="more-right">></view>
 				</view>
 
-				<view class="more-con" bindtap="gotosetting">
+				<view class="more-con" @click="gotosetting">
 					<view class="more-left">
 						<view class="more-left-img">
-							<image src="/images/my/设置_setting-two.png" style="width: 100%; height: 100%;" />
+							<image src="/static/my/setting-two.png" style="width: 100%; height: 100%;" />
 						</view>
 						<view class="more-left-word">设置</view>
 					</view>
@@ -358,29 +359,38 @@
 				usersImg: []
 			}
 		},
-		async mounted() { //async ...await  异步ajax请求参数
-			await uni.request({
+		mounted() { //async ...await  异步ajax请求参数
+			uni.request({
 				url: "https://api.uomg.com/api/rand.avatar",
-				method:"GET",
-				data:{
-					sort:"动漫女",
-					format:"json"
+				method: "GET",
+				data: {
+					sort: "动漫女",
+					format: "json"
 				},
 				success: (res) => {
 					console.log(res);
 					this.usersImg = res.data;
 					console.log(this.usersImg);
+
+
+
+					uni.setStorage({
+						key: 'usericon',
+						data: this.usersImg,
+						success: (res) => {
+							console.log(res);
+						}
+					})
 				}
 			})
 		},
 		methods: {
 			gotosetting() {
 				uni.navigateTo({
-					url: '/pages/setting/setting',
-					methods:"GET"
+					url: '/pages/setting/setting'
 				})
-			},
-		}
+			}
+		},
 	}
 </script>
 
@@ -669,6 +679,8 @@
 	/* 更多服务 */
 	.more {
 		width: 100%;
+		height: 300px;
+		/* background-color: pink; */
 	}
 
 	.more-con {

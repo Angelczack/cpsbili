@@ -85,40 +85,42 @@
 				</view>
 			</view>
 		</view>
-		
-		
-		
-		
+
+
+
+
 		<view class="bg3" v-for="(item,index) in idUrl" :key="index">
-		  <view class="users">
-		    <!-- 头像文字 -->
-		    <view class="vus">
-		
-		      <view class="vus-left">
-		        <view class="vus-icon">
-		          <open-data type="userAvatarUrl"></open-data>
-		        </view>
-		        <view class="vus-word">
-		          <view>
-		            <open-data type="userNickName"></open-data>
-		          </view>
-		          <view style="font-size: 25rpx; color: #666;">17分钟之前</view>
-		        </view>
-		      </view>
-		
-		      <view class="vus-right">
-		        <image src="/images/dongtai/更多1_more-one.png" style="width: 100%; height: 100%;" />
-		      </view>
-		    </view>
-		    <view style="font-size: 35rpx; margin: 10rpx 30rpx;">{{item.title}}</view>
-		  </view>
-		  <!-- 动态列表的内容 pic or other -->
-		  <view class="info">
-		    <view class="info-pic">
-		      <image :src="item.src" style="width: 100%; height: 100%; margin-top: 10rpx;"/>
-		    </view>
-		    <view style="margin: 30rpx; font-size: 30rpx;">{{item.text}}</view>
-		  </view>
+			<view class="users">
+				<!-- 头像文字 -->
+				<view class="vus">
+
+					<view class="vus-left">
+						<view class="vus-icon">
+							<!-- <open-data type="userAvatarUrl"></open-data> -->
+							<image :src="'https://images.weserv.nl/?url='+usericon.imgurl"
+								style="width: 100%; height: 100%;" />
+						</view>
+						<view class="vus-word">
+							<view>
+								<open-data type="userNickName"></open-data>
+							</view>
+							<view style="font-size: 25rpx; color: #666;">17分钟之前</view>
+						</view>
+					</view>
+
+					<view class="vus-right">
+						<image src="/images/dongtai/更多1_more-one.png" style="width: 100%; height: 100%;" />
+					</view>
+				</view>
+				<view style="font-size: 35rpx; margin: 10rpx 30rpx;">{{item.title}}</view>
+			</view>
+			<!-- 动态列表的内容 pic or other -->
+			<view class="info">
+				<view class="info-pic">
+					<image :src="item.src" style="width: 100%; height: 100%; margin-top: 10rpx;" />
+				</view>
+				<view style="margin: 30rpx; font-size: 30rpx;">{{item.text}}</view>
+			</view>
 		</view>
 
 	</view>
@@ -152,37 +154,52 @@
 					src: "/static/dongtai/s5.JPG",
 					word: "gray"
 				}],
-				idUrl:[{
-				  info:true,
-				  title:"失踪人口回归",
-				  pic:true,
-				  src:"/static/lunbo/2.JPG",
-				  ct:true,
-				  text:"nihao",
-				  
-				},{
-				  info:true,
-				  title:"明天是一个好天气",
-				  pic:true,
-				  src:"/static/lunbo/2.JPG",
-				  ct:false,
-				  text:"hello"
-				},{
-				  info:false,
-				  title:"三年之约已到，还没有看新海诚的新作吗",
-				  pic:false,
-				  src:"/static/dongtai/info pic/4.png",
-				  ct:false,
-				  text:"日本著名动画导演新海诚继《你的名字》及《天气之子》之后，又带来了“现象级”新作。该片去年11月在日本上映，累积票房已达到140亿日元，成为新海诚导演又一卖座电影。"
-				},{
-				  info:false,
-				  title:"溜走の时间",
-				  pic:false,
-				  src:"/static/dongtai/info pic/1.DNG",
-				  ct:true,
-				  text:"回家的路"
-				}]
+				idUrl: [{
+					info: true,
+					title: "失踪人口回归",
+					pic: true,
+					src: "/static/lunbo/2.JPG",
+					ct: true,
+					text: "nihao",
+
+				}, {
+					info: true,
+					title: "明天是一个好天气",
+					pic: true,
+					src: "/static/lunbo/2.JPG",
+					ct: false,
+					text: "hello"
+				}, {
+					info: false,
+					title: "三年之约已到，还没有看新海诚的新作吗",
+					pic: false,
+					src: "/static/dongtai/info pic/4.png",
+					ct: false,
+					text: "日本著名动画导演新海诚继《你的名字》及《天气之子》之后，又带来了“现象级”新作。该片去年11月在日本上映，累积票房已达到140亿日元，成为新海诚导演又一卖座电影。"
+				}, {
+					info: false,
+					title: "溜走の时间",
+					pic: false,
+					src: "/static/dongtai/info pic/1.DNG",
+					ct: true,
+					text: "回家的路"
+				}],
+				// 头像资源
+				usericon: []
 			}
+		},
+		mounted() {
+			uni.getStorage({
+				key: 'usericon',
+				success: (res) => {
+					console.log(res);
+					this.usericon = res.data;
+					console.log(this.usericon);
+
+
+					this.usericon = uni.getStorageSync("usericon");
+				}
+			})
 		},
 		methods: {
 

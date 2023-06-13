@@ -1,0 +1,179 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/login/login.wxss */
+/* 页面颜色 */
+page.data-v-b237504c {
+	background-color: #f1f2f3;
+}
+.top.data-v-b237504c {
+	width: 100%;
+	height: 60rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.top-left.data-v-b237504c {
+	display: flex;
+	justify-content: space-around;
+	margin-left: 20rpx;
+}
+.top-left-img.data-v-b237504c {
+	width: 40rpx;
+	height: 40rpx;
+}
+.top-left-word.data-v-b237504c {
+	font-size: 30rpx;
+}
+.top-right.data-v-b237504c {
+	margin-right: 20rpx;
+	font-size: 30rpx;
+}
+/* 图片 */
+.img.data-v-b237504c {
+	width: 100%;
+	height: 200rpx;
+	background-color: skyblue;
+}
+/* 地区 */
+.zone.data-v-b237504c {
+	width: 100%;
+	height: 80rpx;
+	font-size: 35rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 2rpx solid #ccc;
+	border-bottom: 2rpx solid #ccc;
+}
+.zone-left.data-v-b237504c {
+	margin-left: 30rpx;
+}
+.zone-right.data-v-b237504c {
+	margin-right: 20rpx;
+}
+/* 账号密码 */
+.user-box.data-v-b237504c {
+	width: 100%;
+	height: 80rpx;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	border-bottom: 2rpx solid #ccc;
+}
+.user.data-v-b237504c {
+	width: 80%;
+	height: 80rpx;
+	margin-left: 80rpx;
+	caret-color: #ff9bb9;
+	/* background-color: skyblue; */
+}
+.pass-box.data-v-b237504c {
+	width: 100%;
+	height: 80rpx;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	border-bottom: 2rpx solid #ccc;
+}
+.pass.data-v-b237504c {
+	width: 80%;
+	height: 80rpx;
+	margin-left: 80rpx;
+	caret-color: #ff9bb9;
+	/* background-color: pink; */
+}
+

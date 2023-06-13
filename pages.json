@@ -34,13 +34,18 @@
 		"style": {
 			"navigationStyle": "custom"
 		}
-	},{
+	}, {
 		"path": "pages/add/add",
 		"style": {
-			
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/setting/setting",
+		"style": {
+			"navigationStyle": "custom"
 		}
 	}],
-	
+
 	"globalStyle": {
 
 	},
