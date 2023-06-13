@@ -12,7 +12,7 @@
 	}, {
 		"path": "pages/reg/reg",
 		"style": {
-
+		"navigationStyle": "custom"
 		}
 	}, {
 		"path": "pages/index/index",

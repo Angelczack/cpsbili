@@ -1,20 +1,21 @@
 <template>
 	<view>
 		<!-- 固定定位 -->
-		<view id="fix" style="position: fixed; width: 100%; height: auto; z-index: 100; background-color: #fff;">
+		<view id="fix" style="position: fixed; width: 100%; height: auto; z-index: 100; background-color: #ff9bb9;">
 
 
 			<view class="user">
 				<!-- 头像左边部分 -->
 				<view style="display: flex; flex: 1; align-items: center;">
 					<view
-						style="width: 150rpx; height:150rpx; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
+						style="width: 120rpx; height:120rpx; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
 						<!-- <open-data type="userAvatarUrl"></open-data> -->
 						<image :src="'https://images.weserv.nl/?url='+usersImg.imgurl" mode=""
 							style="width: 100%; height: 100%;"></image>
 					</view>
-					<view style="margin-left: 20rpx;">
-						<open-data type="userNickName" style="font-size: 30rpx;"></open-data>
+					<view style="margin-left: 30rpx;">
+						<text>Angelczack</text>
+						<!-- <open-data type="userNickName" style="font-size: 30rpx;"></open-data> -->
 						<view style="font-size:25rpx;">正式会员</view>
 						<view style="font-size:25rpx;">
 							<text decode="true">B币：0.0&nbsp;&nbsp;&nbsp;</text><text>硬币：1299</text>
@@ -23,7 +24,7 @@
 				</view>
 
 				<!-- 头像右边部分 -->
-				<view class="kongjian" style="margin-right: 10rpx;">空间 ></view>
+				<view class="kongjian" style="margin-right: 40rpx;">空间 ></view>
 			</view>
 
 
@@ -403,22 +404,27 @@
 	}
 
 	.user {
-		width: 100%;
+		width: 95%;
 		height: 200rpx;
+		margin: 0 auto;
+		margin-top: 40px;
 		/* background-color: pink; */
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
+		color: #fff;
 	}
 
 	/* 关注列表 */
 	.notice {
 		width: 100%;
-		height: 200rpx;
+		height: 150rpx;
+		margin-bottom: 20px;
 		/* background-color: skyblue; */
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		color: #fff;
 	}
 
 	.notice-left {
@@ -460,6 +466,8 @@
 		margin: 0 auto;
 		border-radius: 20rpx;
 		overflow: hidden;
+		position: relative;
+		bottom: 20px;
 	}
 
 

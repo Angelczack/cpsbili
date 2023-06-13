@@ -1,16 +1,11 @@
 <!--pages/login/login.wxml-->
 <template>
 	<view>
-	<!-- 	<view class="">
-			
-		</view>
-		<navigator url="/pages/index/index" open-type="switchTab">我是login</navigator> -->
 		
 		<view class="top">
 		  <view class="top-left">
-		    <!-- <view class="top-left-img">
-		      <image src="/images/login/返回_return.png" style="width: 100%; height: 100%;"/>
-		    </view> -->
+			  <!-- 返回键 -->
+			  <uni-icons type="arrow-left" size="30"></uni-icons>
 		    <view class="top-left-word">密码登录</view>
 		  </view>
 		
@@ -18,9 +13,10 @@
 		</view>
 		
 		
+
 		<!-- 图片 -->
 		<view class="img">
-		  <image src="" mode=""/>
+		  <!-- <image src="/static/login/2233login.png" /> -->
 		</view>
 		
 		
@@ -40,7 +36,7 @@
 		  <form action="checklogin.php" method="post">
 			  <input type="password" class="pass" v-model="userPass" placeholder="请输入密码" placeholder-style="font-size:30rpx;" maxlength="8"/>
 		  </form>
-		    <text style="font-size: 25rpx; white-space: nowrap; margin-right: 20rpx; color: #ff9bb9;">忘记密码?</text>
+		    <text style="font-size: 25rpx; white-space: nowrap; color: #ff9bb9; margin-left: 40px;">忘记密码?</text>
 		  </view>
 		  
 		</view>
@@ -48,7 +44,7 @@
 		
 		<!-- 注册与登录 -->
 		<view style="display: flex; margin-top: 40rpx;">
-		  <button style="width: 45%; height: 80rpx; background-color: #f1f2f3; border: 2rpx solid #ff9bb9; text-align: center; line-height: 80rpx;"plain="false">注册</button>
+		  <button style="width: 45%; height: 80rpx; background-color: #f1f2f3; border: 2rpx solid #ff9bb9; text-align: center; line-height: 80rpx;"plain="false" @click="gotoReg">注册</button>
 		  <button style="width: 45%; height: 80rpx; background-color: #ff9bb9; border: none; text-align: center; line-height: 80rpx; color: #fff;" plain="false" @click="gotoindex">登录</button>
 		</view>
 		
@@ -106,6 +102,13 @@
 					})
 				}
 				
+			},
+			gotoReg() {
+				uni.navigateTo({
+					url:'/pages/reg/reg',
+					animationType:'pop-in',
+					animationDuration:300
+				})
 			}
 		}
 	}
@@ -120,7 +123,7 @@
 
 	.top {
 		width: 100%;
-		height: 60rpx;
+		height: 120rpx;
 		background-color: #fff;
 		display: flex;
 		justify-content: space-between;
@@ -140,11 +143,14 @@
 
 	.top-left-word {
 		font-size: 30rpx;
+		margin-left: 20px;
+		/* margin-bottom: 10px; */
 	}
 
 	.top-right {
 		margin-right: 20rpx;
 		font-size: 30rpx;
+		/* margin-bottom: 10px; */
 	}
 
 
@@ -152,7 +158,10 @@
 	.img {
 		width: 100%;
 		height: 200rpx;
-		background-color: skyblue;
+		/* background-color: skyblue; */
+		background: url(/static/login/2233login.png) no-repeat;
+		background-size: 90% 100%;
+		background-position: center;
 	}
 
 
