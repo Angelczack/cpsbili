@@ -102,14 +102,14 @@
 						</view>
 						<view class="vus-word">
 							<view>
-								<open-data type="userNickName"></open-data>
+								<text>Angelczack</text>
 							</view>
 							<view style="font-size: 25rpx; color: #666;">17分钟之前</view>
 						</view>
 					</view>
 
 					<view class="vus-right">
-						<image src="/images/dongtai/更多1_more-one.png" style="width: 100%; height: 100%;" />
+						<image src="/static/dongtai/more.png" style="width: 90%; height: 90%;" />
 					</view>
 				</view>
 				<view style="font-size: 35rpx; margin: 10rpx 30rpx;">{{item.title}}</view>
@@ -218,8 +218,11 @@
 	/* 头部 */
 	.top {
 		width: 100%;
-		height: 60rpx;
+		height: 120rpx;
 		background-color: #ff9bb9;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
 	}
 
 	.select {
@@ -374,14 +377,17 @@
 	.vus-left {
 		width: 45%;
 		display: flex;
-		justify-content: space-around;
 		align-items: center;
 		margin-top: 20rpx;
 	}
+	.vus-word{
+		margin-left: 10px;
+	}
 
 	.vus-icon {
-		width: 100rpx;
-		height: 100rpx;
+		width: 90rpx;
+		height: 90rpx;
+		margin-left: 20px;
 		border-radius: 50%;
 		overflow: hidden;
 	}
@@ -389,7 +395,13 @@
 	.vus-right {
 		width: 80rpx;
 		height: 80rpx;
+		/* background-color: pink; */
 		margin-top: 20rpx;
+		margin-right: 10px;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	/* 动态的内容 pic or other */

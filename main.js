@@ -1,8 +1,14 @@
 
 // #ifndef VUE3
 import Vue from 'vue'
+// uview
+import uView from '@/uni_modules/uview-ui'
+Vue.use(uView)
 import App from './App'
 import request from './API/requset.js'
+
+
+
 
 Vue.config.productionTip = false
 Vue.prototype.$get = request.get

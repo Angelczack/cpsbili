@@ -8,7 +8,7 @@
 				<!-- 头像左边部分 -->
 				<view style="display: flex; flex: 1; align-items: center;">
 					<view
-						style="width: 120rpx; height:120rpx; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
+						style="width: 120rpx; height:120rpx; border: 2px solid #fff; overflow: hidden;border-radius: 50%; margin-left: 20rpx;">
 						<!-- <open-data type="userAvatarUrl"></open-data> -->
 						<image :src="'https://images.weserv.nl/?url='+usersImg.imgurl" mode=""
 							style="width: 100%; height: 100%;"></image>
@@ -357,33 +357,45 @@
 					src: "/static/my/设置_setting-two.png",
 					word: "设置"
 				}],
-				usersImg: []
+				usersImg: [],
+				// 加载次数
+				isload:0
 			}
 		},
 		mounted() { //async ...await  异步ajax请求参数
-			uni.request({
-				url: "https://api.uomg.com/api/rand.avatar",
-				method: "GET",
-				data: {
-					sort: "动漫女",
-					format: "json"
-				},
-				success: (res) => {
-					console.log(res);
-					this.usersImg = res.data;
-					console.log(this.usersImg);
+			if (this.isload == 0) {
+				uni.request({
+					url: "https://api.uomg.com/api/rand.avatar",
+					method: "GET",
+					data: {
+						sort: "动漫女",
+						format: "json"
+					},
+					success: (res) => {
+						this.isload = 1;
+						console.log(this.isload);
+						console.log(res);
+						this.usersImg = res.data;
+						console.log(this.usersImg);
 
 
 
-					uni.setStorage({
-						key: 'usericon',
-						data: this.usersImg,
-						success: (res) => {
-							console.log(res);
-						}
-					})
-				}
-			})
+						uni.setStorage({
+							key: 'usericon',
+							data: this.usersImg,
+							success: (res) => {
+								console.log(res);
+							}
+						})
+					}
+				})
+			}
+			else{
+				uni.showToast({
+					title:'error'
+				})
+			}
+
 		},
 		methods: {
 			gotosetting() {

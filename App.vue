@@ -13,6 +13,7 @@
 	}
 </script>
 
+
 <style lang="scss">
 	/*每个页面公共css */
 	@import '@/uni_modules/uni-scss/index.scss';
@@ -22,6 +23,7 @@
 	page {
 		background-color: #f5f5f5;
 	}
+	
 
 	/* #endif */
 	.example-info {
@@ -30,3 +32,13 @@
 		padding: 10px;
 	}
 </style>
+
+<style lang="scss">
+		@import "@/uni_modules/uview-ui/index.scss";
+</style>
+
+
+
+
+
+

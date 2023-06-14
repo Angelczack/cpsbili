@@ -27,14 +27,14 @@
 		<view class="user-box">
 		  <text style="margin-left: 30rpx; font-size: 30rpx; white-space: nowrap;">账号</text>
 		  <form action="checklogin.php" method="post">
-			  <input type="text" class="user"  v-model="userNum" placeholder="请输入手机号或邮箱" placeholder-style="font-size:30rpx;" maxlength="10"/>
+			  <input type="text" class="user" v-model="userNum" placeholder="请输入手机号或邮箱" placeholder-style="font-size:30rpx;" maxlength="20"/>
 		  </form>
 		</view>
 		  
 		  <view class="pass-box">
 		  <text style="margin-left: 30rpx; font-size: 30rpx; white-space: nowrap;">密码</text>
 		  <form action="checklogin.php" method="post">
-			  <input type="password" class="pass" v-model="userPass" placeholder="请输入密码" placeholder-style="font-size:30rpx;" maxlength="8"/>
+			  <input type="password" class="pass" v-model="userPass" placeholder="请输入密码" placeholder-style="font-size:30rpx;" maxlength="20"/>
 		  </form>
 		    <text style="font-size: 25rpx; white-space: nowrap; color: #ff9bb9; margin-left: 40px;">忘记密码?</text>
 		  </view>
@@ -128,6 +128,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		box-shadow: -5px -5px 10px #333;
 	}
 
 	.top-left {
@@ -160,7 +161,7 @@
 		height: 200rpx;
 		/* background-color: skyblue; */
 		background: url(/static/login/2233login.png) no-repeat;
-		background-size: 90% 100%;
+		background-size: 90% 120%;
 		background-position: center;
 	}
 

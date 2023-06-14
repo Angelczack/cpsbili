@@ -5,7 +5,7 @@
 		<swiper :current="elCurrent" @change="change" @animationfinish="animationfinish" :interval="interval" :circular="circular" :duration="duration" :autoplay="autoplay"
 		 :previous-margin="effect3d ? effect3dPreviousMargin + 'rpx' : '0'" :next-margin="effect3d ? effect3dPreviousMargin + 'rpx' : '0'"
 		 :style="{
-				height: height + 'rpx',
+				height: height + 'px',
 				backgroundColor: bgColor
 			}">
 			<swiper-item class="u-swiper-item" v-for="(item, index) in list" :key="index">
