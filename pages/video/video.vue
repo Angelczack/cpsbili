@@ -2,7 +2,13 @@
 
 <template>
 	<view>
-		<video :src="src" controls id="myvideo"></video>
+		<!-- <video :src="src" controls id="myvideo"></video> -->
+		<div>
+			<iframe width="100%" height="220px"
+				src="//player.bilibili.com/player.html?aid=699503843"
+				scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+		</div>
+
 
 		<!-- chats -->
 		<view class="chats">
@@ -42,17 +48,21 @@
 				</view>
 			</view>
 
-			<view class="infoTitle">
+			<view class="infoTitle" id="infoTitle">
 				<!-- 视频的状态  例：活动 -->
 				<view class="act">
 					活动
 				</view>
 				<!-- 视频标题 -->
-				<u-collapse id="vtitle">
-					<u-collapse-item :title="item.head" v-for="(item, index) in itemList" :key="index">
-						{{item.body}}
-					</u-collapse-item>
-				</u-collapse>
+				<view id="vtitle" @click.stop.prevent="gotoheight">
+					<text>hellow world !!!</text>
+					<u-icon name="arrow-down" size="30" id="vicon"></u-icon>
+				</view>
+			</view>
+
+			<view id="hbox" class="hbox">
+				<text id="conts" decode="true">nsm31998519\n作品类型: 翻奏曲\n简介:
+					こんにちは！ニコニコオーケストラです。\nニコニコオーケストラは2017年8月2日で創立10周年を迎え、2017年9月30日で初めてのオフ会から10年となりました。\n\nそして、この動画の投稿をもって10年の活動に終止符を打ち、コミュニティを解散致します。\n\n最後にもう一度、あの頃を思い出して「ニコニコ動画流星群」を150人で演奏してみました。\nどうぞ最後までお楽しみ下さい。\n\nこの10年でサブカル演奏オフ・演奏会の文化は大きく広がりました。\n参加者各自それぞ</text>
 			</view>
 
 			<view class="playNums">
@@ -92,7 +102,50 @@
 			</view>
 
 			<view class="infoNav">
-				
+				<ul>
+					<li v-for="(item,index) in Navicons" :key="index">
+						<!-- 图标 -->
+						<view class="nis">
+							<u-icon class="nisx" :name="item.name" size="60" color="#666"></u-icon>
+						</view>
+						<!-- 描述 -->
+						<view class="nts">
+							{{item.desc}}
+						</view>
+					</li>
+				</ul>
+			</view>
+		</view>
+
+
+
+		<!-- 推荐视频 -->
+		<view class="revideos" v-for="(item,index) in reUrls" :key="index">
+			<!-- 视频封面 -->
+			<view class="covers">
+				<image :src="'https://images.weserv.nl/?url='+item.src" style="width: 100%; height: 100%;"></image>
+			</view>
+			<!-- 视频的详情 -->
+			<view class="vdescs">
+				<text style="margin-left: 10px; font-size: 20px; font-weight: 900;">angelczack</text>
+				<view class="author">
+					<u-icon name="account" size="35"></u-icon>
+					<text style="font-size: 16px;">angelcfax</text>
+				</view>
+
+				<!-- 小窗口视频信息   播放数 -->
+				<view class="splays">
+					<ul>
+						<li>
+							<u-icon name="play-circle" size="40"></u-icon>
+							<text style="margin-left: 5px;">5.8万</text>
+						</li>
+						<li>
+							<u-icon name="bell" size="40"></u-icon>
+							<text style="margin-left: 5px;">25</text>
+						</li>
+					</ul>
+				</view>
 			</view>
 		</view>
 
@@ -101,6 +154,10 @@
 
 
 <script>
+	import {
+		Transition
+	} from "vue";
+	import route from '../../uni_modules/uview-ui/libs/function/route';
 	export default {
 		name: "video",
 		data() {
@@ -109,14 +166,54 @@
 				inps: "",
 				// 头像数组
 				usericon: [],
-				// 视频标题
-				itemList: [{
-					head: "赏识在于角度的转换",
-					body: "只要我们正确择取一个合适的参照物乃至稍降一格去看待他人，值得赏识的东西便会扑面而来",
-					open: true,
-					disabled: true
-				}],
-				src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4'
+				// 判断展开
+				isopen: 0,
+				// nav图标
+				Navicons: [{
+						name: "thumb-up-fill",
+						desc: "4625"
+					},
+					{
+						name: "thumb-down-fill",
+						desc: "不喜欢"
+					},
+					{
+						name: "rmb-circle-fill",
+						desc: "713"
+					},
+					{
+						name: "star-fill",
+						desc: "229"
+					},
+					{
+						name: "weixin-circle-fill",
+						desc: "57"
+					}
+				],
+				// 推荐视频
+				reUrls: [{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					},
+					{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					},
+					{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					},
+					{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					},
+					{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					},
+					{
+						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+					}
+				],
+				src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
+				
+				// 获取视频源
+				revideos:[]
 			}
 		},
 		mounted() {
@@ -129,20 +226,49 @@
 				}
 			})
 		},
-		onReady: function(res) {
-			// #ifndef MP-ALIPAY
-			this.videoContext = uni.createVideoContext('myVideo')
-			// #endif
-		},
+		// onReady: function(res) {
+		// 	// #ifndef MP-ALIPAY
+		// 	this.videoContext = uni.createVideoContext('myVideo')
+		// 	// this.videoContext.exitFullScreen()
+		// 	// uni.navigateBack()
+		// 	// #endif
+
+		// },
 		methods: {
 			clickTodanmu() {
 				console.log("done");
+			},
+			gotoheight() {
+				var cheight = document.getElementById("conts").clientHeight;
+				if (cheight != 0) {
+					document.getElementById("hbox").style.height = cheight + 'px';
+					console.log(cheight);
+				}
+				document.getElementById("conts").style.display = "block";
+				document.getElementById("hbox").style.transition = "1s";
+				var current = -180;
+				document.getElementById("vicon").style.transform = 'rotate(' + current + 'deg)';
+				document.getElementById("vicon").style.transition = "0.5s";
+				this.isopen++;
+				if (this.isopen % 2 == 0) {
+					document.getElementById("hbox").style.height = "0px";
+					document.getElementById("hbox").style.transition = "1s";
+
+					document.getElementById("vicon").style.transform = 'rotate(0deg)';
+					document.getElementById("vicon").style.transition = "0.5s";
+					this.isopen = 0;
+				}
 			}
 		}
 	}
 </script>
 
 <style scoped>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
 	/* 全局设置 */
 	page {
 		margin: 0;
@@ -288,14 +414,16 @@
 
 	.infoTitle {
 		width: 100%;
+		height: 60px;
+		/* background-color: pink; */
 		display: flex;
 		justify-content: space-around;
-		align-items: center;
 	}
 
 	.act {
 		width: 45px;
 		height: 25px;
+		margin-top: 18px;
 		border-radius: 25px;
 		font-size: 14px;
 		text-align: center;
@@ -307,9 +435,31 @@
 	#vtitle {
 		width: 80%;
 		height: 40px;
+		font-size: 16px;
+		margin-top: 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		/* background-color: #666; */
 	}
-	
-	.playNums{
+
+	.hbox {
+		width: 100%;
+		overflow: hidden;
+		box-sizing: border-box;
+		/* display: none; */
+		/* background-color: pink; */
+	}
+
+	.hbox text {
+		display: none;
+		width: 90%;
+		margin-left: 10px;
+		margin-top: -5px;
+	}
+
+
+	.playNums {
 		width: 100%;
 		height: 40px;
 		/* background-color: #999; */
@@ -317,11 +467,115 @@
 		align-items: center;
 		font-size: 12px;
 	}
-	.nums{
+
+	.nums {
 		margin-left: 1px;
 	}
-	.plays{display: flex; margin-left: 15px;}
-	.liulans{display: flex; margin-left: 10px;}
-	.createTimes{display: flex; margin-left: 10px;}
-	.nowPeoples{display: flex; margin-left: 10px;}
+
+	.plays {
+		display: flex;
+		margin-left: 15px;
+	}
+
+	.liulans {
+		display: flex;
+		margin-left: 10px;
+	}
+
+	.createTimes {
+		display: flex;
+		margin-left: 10px;
+	}
+
+	.nowPeoples {
+		display: flex;
+		margin-left: 10px;
+	}
+
+	.infoNav {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.infoNav ul {
+		width: 90%;
+		height: 80px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		list-style: none;
+		/* background-color: skyblue; */
+	}
+
+	.infoNav li {
+		width: 20%;
+		height: 80px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		/* background-color: lightgreen; */
+	}
+
+	.nis {
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* background-color: lightcoral; */
+	}
+
+	.nts {
+		width: 100%;
+		font-size: 14px;
+	}
+
+	/* 推荐视频 */
+	.revideos {
+		width: 90%;
+		margin: 20px auto;
+		border-bottom: 1px solid #ccc;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.covers {
+		width: 40%;
+		height: 90px;
+		border-radius: 10px;
+		overflow: hidden;
+		/* background-color: pink; */
+	}
+
+	.vdescs {
+		width: 60%;
+		height: 90px;
+		/* background-color: lightgreen; */
+	}
+
+	.author {
+		margin-left: 10px;
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+	}
+
+	.splays ul {
+		display: flex;
+		list-style: none;
+		align-items: center;
+	}
+
+	.splays li {
+		width: 60px;
+		height: 30px;
+		margin-left: 10px;
+		/* background-color: pink; */
+		display: flex;
+		align-items: center;
+	}
 </style>

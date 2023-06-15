@@ -47,7 +47,7 @@
 
 		<!-- 视频列表 -->
 		<block v-for="(item,index) in videoUrl" :key="index">
-			<view class="videos">
+			<view class="videos" @click="gotovideo">
 
 				<view class="v-left">
 
@@ -126,7 +126,8 @@
 					word2: "若不是你突然闯进我鸡窝……"
 				}],
 				// 用户头像
-				usericon: []
+				usericon: [],
+				// 跳转到用户详情
 			}
 		},
 		mounted() {
@@ -138,7 +139,25 @@
 					console.log(this.usericon);
 				}
 			})
+		},
+		methods:{
+			gotovideo() {
+				uni.request({
+					url:'http://api.bilibili.cn/recommend',
+					data:{
+						tid:1
+					},
+					method:'GET',
+					success: (res) => {
+						console.log(res.data);
+					}
+				}),
+				uni.navigateTo({
+					url:'/pages/video/video'
+				})
+			}
 		}
+		
 	}
 </script>
 

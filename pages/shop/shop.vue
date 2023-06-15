@@ -82,13 +82,13 @@
 		
 		
 		<!-- listx -->
-		<view class="listx">
+		<view class="listx" v-for="(item,index) in imgs" :key="index">
 		  <view class="listx-left">
 		    <view style="width:45%;height:270rpx; background-color: #fff; border-radius: 20rpx;">
 		      <text>今日上新</text>
 		
 		      <view style="width: 100%; height: 270rpx; margin-top: 20rpx;">
-		        <image src="https://img.alicdn.com/imgextra/i2/50454026/O1CN01JS13u31fbxFsMFwUn_!!0-saturn_solar.jpg_468x468q75.jpg_.webp" mode="widthFix" style="width: 80%; height: 70%;" />
+		        <image :src="item.src1" mode="widthFix" style="width: 80%; height: 70%;" />
 		      </view>
 		
 		    </view>
@@ -96,7 +96,7 @@
 		      <text>抢先看</text>
 		
 		      <view style="width: 100%; height: 270rpx; margin-top: 10rpx;">
-		        <image src="https://img.alicdn.com/imgextra/i4/117471323/O1CN01KP01S81Ldyk7frvHL_!!0-saturn_solar.jpg_468x468q75.jpg_.webp" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
+		        <image :src="item.src2" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
 		      </view>
 		    </view>
 		  </view>
@@ -106,14 +106,14 @@
 		      <text>人气排行</text>
 		
 		      <view style="width: 100%; height: 270rpx; margin-top: 10rpx;">
-		        <image src="https://img.alicdn.com/imgextra/i2/13796702/O1CN01NePTZh1zNZGJEsu3x_!!0-saturn_solar.jpg_468x468q75.jpg_.webp" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
+		        <image :src="item.src3" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
 		      </view>
 		    </view>
 		    <view style="width:45%;height:270rpx; background-color: #fff; border-radius: 20rpx;">
 		      <text>签到有礼</text>
 		
 		      <view style="width: 100%; height: 270rpx;">
-		        <image src="https://img.alicdn.com/imgextra/i2/4017354359/O1CN01xKll2c1i4TGi5njPG_!!2-saturn_solar.png_468x468q75.jpg_.webp" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
+		        <image :src="item.src4" mode="aspectFit" style="width: 80%; height: 70%; border-radius: 15rpx;" />
 		      </view>
 		    </view>
 		
@@ -206,7 +206,15 @@
 			  src2:"/static/shop/lists/8.png",
 			  word1:"BILIBILIGOODS 2233 时空战姬系列 亚克力挂件",
 			  word2:"哔哩哔哩 幻星集 2233 棉花娃娃站姿20CM"
-			}]
+			}],
+			imgs:[
+				{
+					src1:'https://img.alicdn.com/imgextra/i2/50454026/O1CN01JS13u31fbxFsMFwUn_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
+					src2:'https://img.alicdn.com/imgextra/i4/117471323/O1CN01KP01S81Ldyk7frvHL_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
+					src3:'https://img.alicdn.com/imgextra/i2/13796702/O1CN01NePTZh1zNZGJEsu3x_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
+					src4:'https://img.alicdn.com/imgextra/i2/4017354359/O1CN01xKll2c1i4TGi5njPG_!!2-saturn_solar.png_468x468q75.jpg_.webp'
+					}
+			]
 			}
 		}
 	}
