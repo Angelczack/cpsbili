@@ -40,8 +40,7 @@
 
 		<!-- swiper -->
 		<u-swiper style="width: 95%; height: 200px; margin: 20px auto; border-radius: 5px; overflow: hidden;"
-			:indicator-dots="true" :title="true" :list="imgUrl" :effect3d="true"
-			:autoplay="true">
+			:indicator-dots="true" :title="true" :list="imgUrl" :effect3d="true" :autoplay="true">
 		</u-swiper>
 
 
@@ -83,8 +82,10 @@
 		name: "index",
 		data() {
 			return {
-				imgUrl: [
-					{image:'/static/lunbo/1.PNG',title:'111'},
+				imgUrl: [{
+						image: '/static/lunbo/1.PNG',
+						title: '111'
+					},
 					"/static/lunbo/2.JPG",
 					"/static/lunbo/3.png",
 					"/static/lunbo/4.png"
@@ -139,25 +140,18 @@
 					console.log(this.usericon);
 				}
 			})
-		},
-		methods:{
-			gotovideo() {
-				uni.request({
-					url:'http://api.bilibili.cn/recommend',
-					data:{
-						tid:1
-					},
-					method:'GET',
-					success: (res) => {
-						console.log(res.data);
-					}
-				}),
-				uni.navigateTo({
-					url:'/pages/video/video'
-				})
-			}
+
+			uni.request({
+				url: 'https://api.bilibili.com/pgc/operation/api/slideshow',
+				method: 'GET',
+				data: {
+					position_id:104
+				},
+				success: (res) => {
+					console.log(res);
+				}
+			})
 		}
-		
 	}
 </script>
 
@@ -243,7 +237,7 @@
 	// 	display: flex;
 	// 	justify-content: center;
 	// }
-	
+
 
 	/* 视频列表 */
 	.videos {

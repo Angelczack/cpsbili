@@ -61,19 +61,18 @@
     // 	"style":"hidden"
     // },
     "vueVersion" : "2",
-    "h5" : {
-      		    "devServer" : {
-      		         "port" : 8080, //浏览器运行端口
-      		          "disableHostCheck" : true, //设置跳过host检查
-      		          "proxy" : {
-      		              "/api" : {
-      		                  "target" : "http://localhost:8080", //目标接口域名
-      		                   "changeOrigin" : false,  //是否跨域
-      		                   "secure" : false,  // 设置支持https协议的代理
-      											 "pathRewrite":{"^/api":""}
-      		             }
-      		        }
-      		    }
-      		}
-
+	// h5端跨域配置
+		"h5": {
+			"devServer": {
+				"disableHostCheck": true,
+				"proxy": {
+					"/api": {
+						"target": "https://www.uinav.com",
+						"changeOrigin": true,
+						"secure": false
+						
+					}
+				}
+			}
+		}
 }
