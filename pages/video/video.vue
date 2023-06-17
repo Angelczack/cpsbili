@@ -4,9 +4,7 @@
 	<view>
 		<!-- <video :src="src" controls id="myvideo"></video> -->
 		<div>
-			<iframe width="100%" height="220px"
-				src="//player.bilibili.com/player.html?aid=699503843"
-				scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+			<video src="/static/video/video-1.mp4" style="width: 100%; height: 220px;" duration="2000"></video>
 		</div>
 
 
@@ -54,7 +52,7 @@
 					活动
 				</view>
 				<!-- 视频标题 -->
-				<view id="vtitle" @click.stop.prevent="gotoheight">
+				<view id="vtitle" @click.native="gotoheight">
 					<text>hellow world !!!</text>
 					<u-icon name="arrow-down" size="30" id="vicon"></u-icon>
 				</view>
@@ -217,12 +215,29 @@
 			}
 		},
 		mounted() {
+			
 			uni.getStorage({
-				key: 'usericon',
+				key:'usericon',
 				success: (res) => {
+				this.usericon = res.data;
+				console.log(this.usericon);
+				}
+			})
+			
+			
+			uni.getStorage({
+				key: 'aid',
+				success: (res) => {
+					this.revideos =res;
 					console.log(res);
-					this.usericon = res.data;
-					console.log(this.usericon);
+				}
+			})
+			
+			uni.request({
+				url:'https://www.bilibili.com/video/14955232',
+				method:'GET',
+				success: (res) => {
+					console.log(res);	
 				}
 			})
 		},

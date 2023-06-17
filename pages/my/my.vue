@@ -358,44 +358,17 @@
 					word: "设置"
 				}],
 				usersImg: [],
-				// 加载次数
-				isload:0
+				
 			}
 		},
 		mounted() { //async ...await  异步ajax请求参数
-			if (this.isload == 0) {
-				uni.request({
-					url: "https://api.uomg.com/api/rand.avatar",
-					method: "GET",
-					data: {
-						sort: "动漫女",
-						format: "json"
-					},
-					success: (res) => {
-						this.isload = 1;
-						console.log(this.isload);
-						console.log(res);
-						this.usersImg = res.data;
-						console.log(this.usersImg);
-
-
-
-						uni.setStorage({
-							key: 'usericon',
-							data: this.usersImg,
-							success: (res) => {
-								console.log(res);
-							}
-						})
-					}
-				})
+		uni.getStorage({
+			key:'usericon',
+			success: (res) => {
+				this.usersImg = res.data;
+				console.log(this.usersImg);
 			}
-			else{
-				uni.showToast({
-					title:'error'
-				})
-			}
-
+		})
 		},
 		methods: {
 			gotosetting() {
@@ -409,12 +382,6 @@
 
 <style scoped>
 	/* pages/my/my.wxss */
-
-	/* 页面颜色 */
-	page {
-		background-color: #fff;
-	}
-
 	.user {
 		width: 95%;
 		height: 200rpx;
@@ -488,7 +455,7 @@
 		width: 95%;
 		height: 200rpx;
 		margin: 0 auto;
-		/* background-color: pink; */
+		/* background-color: #fff; */
 		display: flex;
 		justify-content: space-around;
 	}

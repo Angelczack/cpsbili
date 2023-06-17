@@ -189,17 +189,13 @@
 			}
 		},
 		mounted() {
-			uni.getStorage({
-				key: 'usericon',
-				success: (res) => {
-					console.log(res);
-					this.usericon = res.data;
-					console.log(this.usericon);
-
-
-					this.usericon = uni.getStorageSync("usericon");
-				}
-			})
+		uni.getStorage({
+			key:'usericon',
+			success: (res) => {
+				this.usericon = res.data;
+				console.log(this.usericon);
+			}
+		})
 		},
 		methods: {
 
