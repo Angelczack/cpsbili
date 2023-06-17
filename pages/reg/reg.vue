@@ -94,6 +94,9 @@
 					title: '验证码发送成功,请注意查收！'
 				})
 			}
+		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
 		}
 	}
 </script>

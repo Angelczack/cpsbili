@@ -126,6 +126,9 @@
 			 })
 			},
 		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
+		}
 	}
 </script>
 

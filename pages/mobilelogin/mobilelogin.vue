@@ -91,6 +91,9 @@
 					url: "/pages/index/index"
 				})
 			}
+		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
 		}
 	}
 </script>

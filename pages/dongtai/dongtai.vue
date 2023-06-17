@@ -199,6 +199,9 @@
 		},
 		methods: {
 
+		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
 		}
 	}
 </script>

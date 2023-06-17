@@ -1,6 +1,0 @@
-/* pages/video/video.wxss */
-.video{
-  width: 100%;
-  height: 400rpx;
-  background-color: pink;
-}

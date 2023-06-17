@@ -377,6 +377,9 @@
 				})
 			}
 		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
+		}
 	}
 </script>
 

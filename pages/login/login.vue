@@ -113,6 +113,9 @@
 					animationDuration: 300
 				})
 			}
+		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
 		}
 	}
 </script>

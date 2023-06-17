@@ -274,6 +274,9 @@
 					this.isopen = 0;
 				}
 			}
+		},
+		onPullDownRefresh() {
+			uni.stopPullDownRefresh();
 		}
 	}
 </script>
