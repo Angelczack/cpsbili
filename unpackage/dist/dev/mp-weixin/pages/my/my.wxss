@@ -384,41 +384,28 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* pages/my/my.wxss */
-
-/* 页面颜色 */
-page.data-v-0be17cc6 {
-	background-color: #fff;
-}
 .user.data-v-0be17cc6 {
-	width: 100%;
+	width: 95%;
 	height: 200rpx;
+	margin: 0 auto;
+	margin-top: 40px;
 	/* background-color: pink; */
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	color: #fff;
 }
-
 /* 关注列表 */
 .notice.data-v-0be17cc6 {
 	width: 100%;
-	height: 200rpx;
+	height: 150rpx;
+	margin-bottom: 20px;
 	/* background-color: skyblue; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	color: #fff;
 }
 .notice-left.data-v-0be17cc6 {
 	width: 33%;
@@ -449,7 +436,6 @@ page.data-v-0be17cc6 {
 	text-align: center;
 	/* background-color: lightpink; */
 }
-
 /* 大会员 */
 .VIP.data-v-0be17cc6 {
 	width: 95%;
@@ -457,14 +443,15 @@ page.data-v-0be17cc6 {
 	margin: 0 auto;
 	border-radius: 20rpx;
 	overflow: hidden;
+	position: relative;
+	bottom: 20px;
 }
-
 /* 四个按钮 */
 .nav.data-v-0be17cc6 {
 	width: 95%;
 	height: 200rpx;
 	margin: 0 auto;
-	/* background-color: pink; */
+	/* background-color: #fff; */
 	display: flex;
 	justify-content: space-around;
 }
@@ -479,7 +466,6 @@ page.data-v-0be17cc6 {
 	white-space: nowrap;
 	margin-left: -32rpx;
 }
-
 /* 创作中心 */
 .create.data-v-0be17cc6 {
 	width: 100%;
@@ -505,7 +491,6 @@ page.data-v-0be17cc6 {
 	overflow: hidden;
 	scale: 0.8;
 }
-
 /* create icon */
 .createicon.data-v-0be17cc6 {
 	width: 100%;
@@ -517,7 +502,6 @@ page.data-v-0be17cc6 {
 	width: 60rpx;
 	height: 60rpx;
 }
-
 /* 通知 */
 .tongzhi.data-v-0be17cc6 {
 	width: 90%;
@@ -552,7 +536,6 @@ page.data-v-0be17cc6 {
 	font-size: 30rpx;
 	color: #ff9bb9;
 }
-
 /* 游戏中心 */
 .game.data-v-0be17cc6 {
 	width: 100%;
@@ -579,7 +562,6 @@ page.data-v-0be17cc6 {
 .game-top-right.data-v-0be17cc6 {
 	margin-right: 20rpx;
 }
-
 /* 图标 */
 .gameicon.data-v-0be17cc6 {
 	width: 100%;
@@ -598,7 +580,6 @@ page.data-v-0be17cc6 {
 	white-space: nowrap;
 	margin-left: -20rpx;
 }
-
 /* 游戏中心 */
 .tuijian.data-v-0be17cc6 {
 	width: 100%;
@@ -625,7 +606,6 @@ page.data-v-0be17cc6 {
 .tuijian-top-right.data-v-0be17cc6 {
 	margin-right: 20rpx;
 }
-
 /* 图标 */
 .tuijianicon.data-v-0be17cc6 {
 	width: 100%;
@@ -644,10 +624,11 @@ page.data-v-0be17cc6 {
 	white-space: nowrap;
 	margin-left: -20rpx;
 }
-
 /* 更多服务 */
 .more.data-v-0be17cc6 {
 	width: 100%;
+	height: 300px;
+	/* background-color: pink; */
 }
 .more-con.data-v-0be17cc6 {
 	height: 100rpx;

@@ -1,4 +1,10 @@
 {
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "shop-u-waterfall-left": "/pages/shop/shop-u-waterfall-left",
+    "shop-u-waterfall-right": "/pages/shop/shop-u-waterfall-right",
+    "u-waterfall": "/uni_modules/uview-ui/components/u-waterfall/u-waterfall",
+    "u-lazy-load": "/uni_modules/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/uni_modules/uview-ui/components/u-loadmore/u-loadmore"
+  }
 }

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.u-waterfall.data-v-a0288542 {
+  display: flex;
+  flex-direction: row;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.u-column.data-v-a0288542 {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-direction: column;
+  height: auto;
+}
+.u-image.data-v-a0288542 {
+  width: 100%;
+}
+

@@ -123,6 +123,12 @@
 			</view>
 		</view>
 
+
+
+	<!-- 回到顶部 -->
+			<u-back-top :scroll-top="scrollTop"></u-back-top>
+		
+		
 	</view>
 </template>
 
@@ -131,6 +137,8 @@
 		name: "dongtai",
 		data() {
 			return {
+				// 回到顶部变量
+				scrollTop: 0,
 				btnUrl: ["全部", "未观看", "继续观看", "视频", "直播"],
 				contUrl: [{
 					src: "/static/dongtai/s7.JPG",
@@ -188,6 +196,9 @@
 				usericon: []
 			}
 		},
+		onPageScroll(e) {
+				this.scrollTop = e.scrollTop;
+			},
 		mounted() {
 		uni.getStorage({
 			key:'usericon',
@@ -206,9 +217,8 @@
 	}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 	/* pages/dongtai/dongtai.wxss */
-
 	/* 全局 */
 	page {
 		background-color: #f1f2f2;

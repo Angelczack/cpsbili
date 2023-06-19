@@ -1,4 +1,9 @@
 {
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal",
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search",
+    "u-tabs-swiper": "/uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper"
+  }
 }

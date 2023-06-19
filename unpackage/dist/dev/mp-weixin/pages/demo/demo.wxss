@@ -1,0 +1,60 @@
+
+page {
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.wrap.data-v-eae40a34 {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 0px);
+  width: 100%;
+}
+/* 视频列表 */
+.videos.data-v-eae40a34 {
+  width: 100%;
+  margin-top: -20px;
+}
+.videos-left.data-v-eae40a34 {
+  width: 50%;
+  float: left;
+}
+.v-left.data-v-eae40a34 {
+  width: 85%;
+  height: 270rpx;
+  border-radius: 20rpx;
+  margin-left: 15px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.v-left-img.data-v-eae40a34 {
+  height: 190rpx;
+}
+.v-left-word.data-v-eae40a34 {
+  font-size: 25rpx;
+}
+.videos-right.data-v-eae40a34 {
+  width: 50%;
+  float: left;
+}
+.v-right.data-v-eae40a34 {
+  width: 85%;
+  height: 270rpx;
+  border-radius: 20rpx;
+  margin-left: 15px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.v-right-img.data-v-eae40a34 {
+  height: 190rpx;
+}
+.v-right-word.data-v-eae40a34 {
+  width: 100%;
+  font-size: 25rpx;
+  /* background-color: pink; */
+}
+

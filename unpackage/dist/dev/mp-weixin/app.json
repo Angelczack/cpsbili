@@ -7,10 +7,16 @@
     "pages/shop/shop",
     "pages/dongtai/dongtai",
     "pages/my/my",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/setting/setting",
+    "pages/video/video",
+    "pages/demo/demo"
   ],
   "subPackages": [],
-  "window": {},
+  "window": {
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
   "tabBar": {
     "selectedColor": "#ff9bb9",
     "list": [
