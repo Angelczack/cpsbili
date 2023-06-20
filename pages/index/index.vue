@@ -15,13 +15,23 @@
 		<u-popup mode="bottom" v-model="isshow" :mode="right" mask-close-able="true" closeable="true"
 			close-icon-pos="top-right">
 			<view class="content">
-				<scroll-view scroll-y="true" style=" width:160px; height: 300rpx;">
-					<view>
+				<scroll-view scroll-y="true" style=" width:160px; height: 100vh;">
+					<view style="display: flex; align-items: center;">
 						<!-- 用户头像 -->
 						<view class="user-img" @click="isshow = true;">
 							<image :src="'https://images.weserv.nl/?url='+usericon.imgurl"></image>
 						</view>
+						
+						<text style="margin-top: 50px; font-size: 14px; font-weight: 900;">Angelczack</text>
 					</view>
+					
+					<ul class="tbtns" style="width: 100%; display: flex; flex-direction: column; align-items: center; padding: 0; margin-top: 20px;">
+						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">首页</li>
+						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">番剧</li>
+						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">直播</li>
+						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">设置</li>
+						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">动态</li>
+					</ul>
 				</scroll-view>
 			</view>
 		</u-popup>
@@ -225,7 +235,7 @@
 		name: "index",
 		data() {
 			return {
-				show: true,
+				show: false,
 				// 传递给uni-app"rich-text"组件的内容，可以使用"<br>"进行换行
 				content: `
 								1. 修复了轮播图切换空屏的情况<br>
@@ -236,7 +246,7 @@
 				// 输入框的val
 				keyword: "",
 				//弹窗
-				isshow: "",
+				isshow: false,
 				imgUrl: [{
 						image: '/static/lunbo/1.PNG',
 						title: '111'
@@ -491,6 +501,9 @@
 	.content {
 		padding: 24rpx;
 		text-align: center;
+	}
+	.tbtns li:hover{
+		background-color: rgb(254,169,255);
 	}
 
 
