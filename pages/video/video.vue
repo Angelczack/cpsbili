@@ -19,7 +19,7 @@
 
 			<view class="chats-right">
 				<input type="text" v-model="inps" @click="clickTodanmu">
-				<button class="btns" plain="true">发送</button>
+				<button class="btns" plain="true" style="border-radius: 10px; margin-left: 10px;">发送</button>
 			</view>
 		</view>
 
@@ -118,17 +118,17 @@
 
 
 		<!-- 推荐视频 -->
-		<view class="revideos" v-for="(item,index) in reUrls" :key="index">
+		<view class="revideos" v-for="(item,index) in videoUrl" :key="index">
 			<!-- 视频封面 -->
 			<view class="covers">
-				<image :src="'https://images.weserv.nl/?url='+item.src" style="width: 100%; height: 100%;"></image>
+				<image :src="'https://images.weserv.nl/?url='+item.pic" style="width: 100%; height: 100%;"></image>
 			</view>
 			<!-- 视频的详情 -->
 			<view class="vdescs">
-				<text style="margin-left: 10px; font-size: 20px; font-weight: 900;">angelczack</text>
+				<text style="margin-left: 10px; font-size: 14px; font-weight: 900; display: block; width: 100%; height:25px; overflow: hidden;">{{item.title}}</text>
 				<view class="author">
 					<u-icon name="account" size="35"></u-icon>
-					<text style="font-size: 16px;">angelcfax</text>
+					<text style="font-size: 16px; display: block; width: 100%; height:30px;">{{item.author}}</text>
 				</view>
 
 				<!-- 小窗口视频信息   播放数 -->
@@ -211,10 +211,26 @@
 				src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
 				
 				// 获取视频源
-				revideos:[]
+				revideos:[],
+				videoUrl:[]
+				
 			}
 		},
 		mounted() {
+			
+			
+			uni.request({
+				url: 'http://api.bilibili.cn/recommend',
+				method: 'GET',
+				data: {
+					page: Math.random() * 50 + 10,
+					pagesize: 4
+				},
+				success: (res) => {
+					this.videoUrl = res.data.list;
+					console.log(this.videoUrl);
+				}
+			})
 			
 			uni.getStorage({
 				key:'usericon',
@@ -276,6 +292,18 @@
 			}
 		},
 		onPullDownRefresh() {
+				uni.request({
+					url: 'http://api.bilibili.cn/recommend',
+					method: 'GET',
+					data: {
+						page: Math.random() * 10 + 40,
+						pagesize: 4
+					},
+					success: (res) => {
+						this.videoUrl = res.data.list;
+						console.log(this.videoUrl1);
+					}
+				})
 			uni.stopPullDownRefresh();
 		}
 	}
@@ -354,13 +382,14 @@
 	.chats-right input {
 		width: 150px;
 		height: 30px;
-		border: 1px solid #333;
+		border: 1px solid #ccc;
+		border-radius: 5px;
 
 	}
 
 	.chats-right .btns {
-		width: 60px;
-		height: 32px;
+		width: 90px;
+		height: 30px;
 		margin-right: 20px;
 		font-size: 14px;
 		color: #fff;
@@ -370,7 +399,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: pink;
+		background-color: rgb(255, 102, 153);
 	}
 
 
@@ -554,6 +583,7 @@
 	/* 推荐视频 */
 	.revideos {
 		width: 90%;
+		margin: 300px;
 		margin: 20px auto;
 		border-bottom: 1px solid #ccc;
 		display: flex;
