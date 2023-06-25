@@ -3,7 +3,7 @@
 	<view>
 
 		<!-- tips update -->
-		<u-modal v-model="show" :show-cancel-button="true" confirm-text="升级" title="发现新版本" @cancel="cancel"
+		<u-modal v-model="show" :show-cancel-button="true" confirm-text="更新" title="发现新版本" @cancel="cancel"
 			@confirm="confirm">
 			<view class="u-update-content">
 				<rich-text :nodes="content"></rich-text>
