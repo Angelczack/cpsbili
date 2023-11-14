@@ -29,7 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 144:
+/***/ 146:
 /*!***********************************************************!*\
   !*** D:/cpsbili/main.js?{"page":"pages%2Fvideo%2Fvideo"} ***!
   \***********************************************************/
@@ -130,7 +130,7 @@ var components
 try {
   components = {
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */ "uni_modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 191))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */ "uni_modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 200))
     },
   }
 } catch (e) {
@@ -392,11 +392,24 @@ var _default = {
       }],
       src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
       // 获取视频源
-      revideos: []
+      revideos: [],
+      videoUrl: []
     };
   },
   mounted: function mounted() {
     var _this = this;
+    uni.request({
+      url: 'http://api.bilibili.cn/recommend',
+      method: 'GET',
+      data: {
+        page: Math.random() * 50 + 10,
+        pagesize: 4
+      },
+      success: function success(res) {
+        _this.videoUrl = res.data.list;
+        console.log(_this.videoUrl);
+      }
+    });
     uni.getStorage({
       key: 'usericon',
       success: function success(res) {
@@ -453,6 +466,19 @@ var _default = {
     }
   },
   onPullDownRefresh: function onPullDownRefresh() {
+    var _this2 = this;
+    uni.request({
+      url: 'http://api.bilibili.cn/recommend',
+      method: 'GET',
+      data: {
+        page: Math.random() * 10 + 40,
+        pagesize: 4
+      },
+      success: function success(res) {
+        _this2.videoUrl = res.data.list;
+        console.log(_this2.videoUrl1);
+      }
+    });
     uni.stopPullDownRefresh();
   }
 };
@@ -461,5 +487,5 @@ exports.default = _default;
 
 /***/ })
 
-},[[144,"common/runtime","common/vendor"]]]);
+},[[146,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/video/video.js.map

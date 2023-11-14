@@ -282,6 +282,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 全局设置 */
 page.data-v-3ec61a7e {
 	margin: 0;
@@ -342,11 +370,12 @@ page.data-v-3ec61a7e {
 .chats-right input.data-v-3ec61a7e {
 	width: 150px;
 	height: 30px;
-	border: 1px solid #333;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 .chats-right .btns.data-v-3ec61a7e {
-	width: 60px;
-	height: 32px;
+	width: 90px;
+	height: 30px;
 	margin-right: 20px;
 	font-size: 14px;
 	color: #fff;
@@ -356,7 +385,7 @@ page.data-v-3ec61a7e {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: pink;
+	background-color: rgb(255, 102, 153);
 }
 
 /* infos */
@@ -514,6 +543,7 @@ page.data-v-3ec61a7e {
 /* 推荐视频 */
 .revideos.data-v-3ec61a7e {
 	width: 90%;
+	margin: 300px;
 	margin: 20px auto;
 	border-bottom: 1px solid #ccc;
 	display: flex;
@@ -565,6 +595,13 @@ page.data-v-57280228 {
   flex-direction: column;
   height: calc(100vh - 0px);
   width: 100%;
+}
+.content.data-v-57280228 {
+  padding: 24rpx;
+  text-align: center;
+}
+.tbtns ._li.data-v-57280228:hover {
+  background-color: #fea9ff;
 }
 .u-full-content.data-v-57280228 {
   background-color: #00C777;

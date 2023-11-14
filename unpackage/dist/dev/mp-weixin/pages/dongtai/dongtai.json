@@ -1,4 +1,6 @@
 {
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-back-top": "/uni_modules/uview-ui/components/u-back-top/u-back-top"
+  }
 }

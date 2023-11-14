@@ -1,2 +1,1 @@
-<!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<view style="margin:25px;"><u-upload class="vue-ref" vue-id="14bea408-1" action="{{action}}" auto-upload="{{true}}" data-ref="uUpload" bind:__l="__l"></u-upload><u-input bind:input="__e" vue-id="14bea408-2" type="{{type}}" border="{{border}}" height="{{height}}" auto-height="{{autoheight}}" value="{{value}}" data-event-opts="{{[['^input',[['__set_model',['','value','$event',[]]]]]]}}" bind:__l="__l"></u-input><u-button bind:click="__e" vue-id="14bea408-3" data-event-opts="{{[['^click',[['submit']]]]}}" bind:__l="__l" vue-slots="{{['default']}}">上传</u-button></view>

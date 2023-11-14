@@ -159,16 +159,19 @@ var components
 try {
   components = {
     uModal: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */ "uni_modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 163))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */ "uni_modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 165))
+    },
+    uPopup: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */ "uni_modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 172))
     },
     uSearch: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-search/u-search */ "uni_modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 170))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-search/u-search */ "uni_modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 179))
     },
     uTabsSwiper: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 177))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 186))
     },
     uSwiper: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-swiper/u-swiper */ "uni_modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swiper/u-swiper.vue */ 184))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-swiper/u-swiper */ "uni_modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swiper/u-swiper.vue */ 193))
     },
   }
 } catch (e) {
@@ -192,6 +195,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function ($event) {
+      _vm.isshow = true
+    }
+    _vm.e1 = function ($event) {
+      _vm.isshow = true
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -427,15 +438,52 @@ var _video = _interopRequireDefault(__webpack_require__(/*! ../video/video.vue *
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   name: "index",
   data: function data() {
     return {
-      show: true,
+      show: false,
       // 传递给uni-app"rich-text"组件的内容，可以使用"<br>"进行换行
       content: "\n\t\t\t\t\t\t\t1. \u4FEE\u590D\u4E86\u8F6E\u64AD\u56FE\u5207\u6362\u7A7A\u5C4F\u7684\u60C5\u51B5<br>\n\t\t\t\t\t\t\t2. \u65B0\u589EModal\u6A21\u6001\u6846\u7EC4\u4EF6<br>\n\t\t\t\t\t\t\t3. \u65B0\u589E\u52A8\u6001\u5237\u65B0\u529F\u80FD<br>\n\t\t\t\t\t\t\t4. \u4FEE\u590D\u952E\u76D8\u7EC4\u4EF6\u5728\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F\u4E0A\u906E\u7F69\u65E0\u6548\u7684\u95EE\u9898\n\t\t\t\t\t\t",
       // 输入框的val
       keyword: "",
+      //弹窗
+      isshow: false,
       imgUrl: [{
         image: '/static/lunbo/1.PNG',
         title: '111'
@@ -562,26 +610,26 @@ var _default = {
       }
     });
     uni.request({
-      url: 'http://api.bilibili.cn/recommend',
+      url: 'https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=12',
       method: 'GET',
       data: {
-        page: Math.random() * 50 + 10,
-        pagesize: 4
+        // page: Math.random() * 50 + 10,
+        // pagesize: 4
       },
       success: function success(res) {
-        _this.videoUrl1 = res.data.list;
+        _this.videoUrl1 = res.data.item;
         console.log(_this.videoUrl1);
       }
     });
     uni.request({
-      url: 'http://api.bilibili.cn/recommend',
+      url: 'https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=12',
       method: 'GET',
       data: {
-        page: Math.random() * 50 + 10,
-        pagesize: 4
+        // page: Math.random() * 50 + 10,
+        // pagesize: 4
       },
       success: function success(res) {
-        _this.videoUrl2 = res.data.list;
+        _this.videoUrl2 = res.data.item;
         console.log(_this.videoUrl2);
       }
     });
@@ -610,7 +658,7 @@ var _default = {
   onPullDownRefresh: function onPullDownRefresh() {
     var _this2 = this;
     uni.request({
-      url: 'http://api.bilibili.cn/recommend',
+      url: 'https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=12',
       method: 'GET',
       data: {
         page: Math.random() * 10 + 40,
@@ -622,7 +670,7 @@ var _default = {
       }
     });
     uni.request({
-      url: 'http://api.bilibili.cn/recommend',
+      url: 'https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=12',
       method: 'GET',
       data: {
         page: Math.random() * 50 + 100,
@@ -724,7 +772,7 @@ var components
 try {
   components = {
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */ "uni_modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 191))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */ "uni_modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 200))
     },
   }
 } catch (e) {
@@ -986,11 +1034,24 @@ var _default = {
       }],
       src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
       // 获取视频源
-      revideos: []
+      revideos: [],
+      videoUrl: []
     };
   },
   mounted: function mounted() {
     var _this = this;
+    uni.request({
+      url: 'http://api.bilibili.cn/recommend',
+      method: 'GET',
+      data: {
+        page: Math.random() * 50 + 10,
+        pagesize: 4
+      },
+      success: function success(res) {
+        _this.videoUrl = res.data.list;
+        console.log(_this.videoUrl);
+      }
+    });
     uni.getStorage({
       key: 'usericon',
       success: function success(res) {
@@ -1047,6 +1108,19 @@ var _default = {
     }
   },
   onPullDownRefresh: function onPullDownRefresh() {
+    var _this2 = this;
+    uni.request({
+      url: 'http://api.bilibili.cn/recommend',
+      method: 'GET',
+      data: {
+        page: Math.random() * 10 + 40,
+        pagesize: 4
+      },
+      success: function success(res) {
+        _this2.videoUrl = res.data.list;
+        console.log(_this2.videoUrl1);
+      }
+    });
     uni.stopPullDownRefresh();
   }
 };

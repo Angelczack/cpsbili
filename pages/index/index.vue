@@ -3,12 +3,12 @@
 	<view>
 
 		<!-- tips update -->
-		<u-modal v-model="show" :show-cancel-button="true" confirm-text="更新" title="发现新版本" @cancel="cancel"
+		<!-- <u-modal v-model="show" :show-cancel-button="true" confirm-text="更新" title="发现新版本" @cancel="cancel"
 			@confirm="confirm">
 			<view class="u-update-content">
 				<rich-text :nodes="content"></rich-text>
 			</view>
-		</u-modal>
+		</u-modal> -->
 
 
 
@@ -21,16 +21,27 @@
 						<view class="user-img" @click="isshow = true;">
 							<image :src="'https://images.weserv.nl/?url='+usericon.imgurl"></image>
 						</view>
-						
+
 						<text style="margin-top: 50px; font-size: 14px; font-weight: 900;">Angelczack</text>
 					</view>
-					
-					<ul class="tbtns" style="width: 100%; display: flex; flex-direction: column; align-items: center; padding: 0; margin-top: 20px;">
-						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">首页</li>
-						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">番剧</li>
-						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">直播</li>
-						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">设置</li>
-						<li style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">动态</li>
+
+					<ul class="tbtns"
+						style="width: 100%; display: flex; flex-direction: column; align-items: center; padding: 0; margin-top: 20px;">
+						<li
+							style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">
+							首页</li>
+						<li
+							style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">
+							番剧</li>
+						<li
+							style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">
+							直播</li>
+						<li
+							style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">
+							设置</li>
+						<li
+							style="width:100%; height:30px; display:flex; justify-content: start; align-items: center; margin-left:10px; font-size:16px; font-weight:900;">
+							动态</li>
 					</ul>
 				</scroll-view>
 			</view>
@@ -73,6 +84,8 @@
 			</scroll-view>
 		</view> -->
 
+
+		<!-- 滑动选项卡 -->
 		<view class="wrap">
 			<view class="u-tabs-box">
 				<u-tabs-swiper activeColor="#ff9bb9" ref="tabs" :list="list" :current="current" @change="change"
@@ -89,10 +102,9 @@
 						</u-swiper>
 
 						<!-- 视频列表 -->
-
 						<view class="videos">
 							<view class="videos-left" v-for="(item,index) in videoUrl1" :key="index">
-								<view class="v-left" @click="gotovideo(item.aid)">
+								<view class="v-left" @click="gotovideo(item.uri)">
 
 									<view class="v-left-img">
 										<image :src="'https://images.weserv.nl/?url='+item.pic"
@@ -106,7 +118,7 @@
 							</view>
 
 							<view class="videos-right" v-for="(item,index) in videoUrl2" :key="index">
-								<view class="v-right" @click="gotovideo(item.aid)">
+								<view class="v-right" @click="gotovideo(item.uri)">
 									<view class="v-right-img">
 										<image :src="'https://images.weserv.nl/?url='+item.pic"
 											style="width: 100%; height: 100%;border-radius: 20rpx;" />
@@ -179,10 +191,12 @@
 									<swiper-item>
 										<view
 											style="width: 200rpx; height: 140rpx; margin: 20rpx 25rpx 0rpx 25rpx; border-radius: 20rpx; overflow: hidden;">
-											<image :src="item.src" style="width: 100%; height: 100%;" />
+											<image :src="'https://images.weserv.nl/?url='+item.src"
+												style="width: 100%; height: 100%;" />
 										</view>
 										<view style="text-align: center; font-size: 25rpx; margin-top: 5rpx;">
-											{{item.word}}</view>
+											{{item.word}}
+										</view>
 									</swiper-item>
 								</block>
 							</swiper>
@@ -199,14 +213,16 @@
 							<view class="ving">
 								<view class="ving-left">
 									<view class="ving-left-img">
-										<image :src="item.src1" style="width: 100%; height: 100%;" />
+										<image :src="'https://images.weserv.nl/?url='+item.src1"
+											style="width: 100%; height: 100%;" />
 									</view>
 									<view class="ving-left-word">{{item.word1}}</view>
 								</view>
 
 								<view class="ving-right">
 									<view class="ving-right-img">
-										<image :src="item.src2" style="width: 100%; height: 100%;" />
+										<image :src="'https://images.weserv.nl/?url='+item.src2"
+											style="width: 100%; height: 100%;" />
 									</view>
 									<view class="ving-right-word">{{item.word2}}</view>
 								</view>
@@ -391,28 +407,31 @@
 
 
 			uni.request({
-				url: 'http://api.bilibili.cn/recommend',
+				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
 				method: 'GET',
 				data: {
-					page: Math.random() * 50 + 10,
-					pagesize: 4
+					ps: 12,
+					rid: 1
+
 				},
 				success: (res) => {
-					this.videoUrl1 = res.data.list;
+					console.log(res.data);
+					this.videoUrl1 = res.data.archives;
 					console.log(this.videoUrl1);
 				}
 			})
 
 
 			uni.request({
-				url: 'http://api.bilibili.cn/recommend',
+				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
 				method: 'GET',
 				data: {
-					page: Math.random() * 50 + 10,
-					pagesize: 4
+					ps: 12,
+					rid: 1
 				},
 				success: (res) => {
-					this.videoUrl2 = res.data.list;
+					console.log(res.data);
+					this.videoUrl2 = res.data.archives;
 					console.log(this.videoUrl2);
 				}
 			})
@@ -448,28 +467,28 @@
 		},
 		onPullDownRefresh() {
 			uni.request({
-				url: 'http://api.bilibili.cn/recommend',
+				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
 				method: 'GET',
 				data: {
-					page: Math.random() * 10 + 40,
-					pagesize: 4
+					ps:12,
+					rid:1
 				},
 				success: (res) => {
-					this.videoUrl1 = res.data.list;
-					console.log(this.videoUrl1);
+					this.videoUrl1 = res.data.item;
+					console.log(res.data.list);
 				}
 			})
 
 
 			uni.request({
-				url: 'http://api.bilibili.cn/recommend',
+				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
 				method: 'GET',
 				data: {
-					page: Math.random() * 50 + 100,
-					pagesize: 4
+					ps:12,
+					rid:1
 				},
 				success: (res) => {
-					this.videoUrl2 = res.data.list;
+					this.videoUrl2 = res.data.item;
 					console.log(this.videoUrl2);
 				}
 			})
@@ -502,8 +521,9 @@
 		padding: 24rpx;
 		text-align: center;
 	}
-	.tbtns li:hover{
-		background-color: rgb(254,169,255);
+
+	.tbtns li:hover {
+		background-color: rgb(254, 169, 255);
 	}
 
 

@@ -105,13 +105,13 @@ var components
 try {
   components = {
     uWaterfall: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-waterfall/u-waterfall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-waterfall/u-waterfall")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-waterfall/u-waterfall.vue */ 198))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-waterfall/u-waterfall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-waterfall/u-waterfall")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-waterfall/u-waterfall.vue */ 207))
     },
     uLazyLoad: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-lazy-load/u-lazy-load */ "uni_modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-lazy-load/u-lazy-load.vue */ 205))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-lazy-load/u-lazy-load */ "uni_modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-lazy-load/u-lazy-load.vue */ 214))
     },
     uLoadmore: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-loadmore/u-loadmore */ "uni_modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-loadmore/u-loadmore.vue */ 212))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-loadmore/u-loadmore */ "uni_modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-loadmore/u-loadmore.vue */ 221))
     },
   }
 } catch (e) {
@@ -415,78 +415,83 @@ var _default = {
       list: [{
         price: 35,
         title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/53/4e/534ec45725c86754b9c42fb646f8be16.png'
+      }, {
+        price: 28,
+        title: 'bilibiliGoods 癸卯兔年系列 2233小电视 贴纸套装',
+        shop: 'bilibili会员购',
+        image: 'https://i0.hdslb.com/bfs/mall/mall/46/ff/46ff0890984088dcc08db60785964567.png'
       }, {
         price: 75,
         title: '哔哩哔哩 幻星集 2233 棉花娃娃站姿20CM',
-        shop: '李白杜甫白居易旗舰店',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/15/2b/152b59a67b29264fa816193d784af5f0.png'
       }, {
         price: 75,
         title: 'BILIBILIGOODS 哔哩哔哩幻星集 2233 青幻之镰&星耀使魔 12周年纪念 手办 通常版',
-        shop: '李白杜甫白居易旗舰店',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/mall/30/d7/30d7132eb3afacefa77e16df39518cc9.png'
       }, {
-        price: 385,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        price: 12,
+        title: 'BILIBILIGOODS 2233 时空战姬系列 收藏闪卡',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/58/b5/58b50b56d0ce8c3b23d9ae245d89ac37.png'
       }, {
-        price: 784,
-        title: '欲与天公试比高',
-        shop: '李白杜甫白居易旗舰店',
+        price: 299,
+        title: 'BANPRESTO ESPRESTO系列 哔哩哔哩 22 33 小电视 景品手办 附独家特典',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/mall/de/32/de320bbd58f651e7ba624340f83a65ce.png'
       }, {
-        price: 7891,
+        price: 789,
         title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/mall/f3/e1/f3e1d557421d27832427eec17d101b07.png'
       }, {
-        price: 2341,
-        shop: '李白杜甫白居易旗舰店',
+        price: 231,
+        shop: 'bilibili会员购',
         title: 'bilibiliGoods 癸卯兔年系列 2233 光栅徽章',
-        image: 'https://i0.hdslb.com/bfs/mall/vendor/2a/1d/2a1d21d37e2dc4e51b908869fe9b8301.png'
-      }, {
-        price: 2341,
-        shop: '李白杜甫白居易旗舰店',
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
         image: 'https://i0.hdslb.com/bfs/mall/mall/46/6c/466cc27a69c042f3c8331f27048e67b1.png'
       }, {
-        price: 661,
-        shop: '李白杜甫白居易旗舰店',
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
+        price: 23,
+        shop: 'bilibili会员购',
+        title: 'BILIBILIGOODS 2233 睡衣派对系列 金属徽章套装',
+        image: 'https://i0.hdslb.com/bfs/mall/vendor/09/98/0998becd19f08e1688a53c023d85bdb5.png'
+      }, {
+        price: 77,
+        shop: 'bilibili会员购',
+        title: 'bilibiliGoods 癸卯兔年系列 小电视 毛绒挂件&抱枕',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/2a/1d/2a1d21d37e2dc4e51b908869fe9b8301.png'
       }, {
-        price: 1654,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        price: 15,
+        title: 'BILIBILIGOODS 2233 人生百戏系列 高帮帆布鞋',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/71/fe/71fe2c2683130da2fbfcfc18fac0cd89.png'
       }, {
         price: 58,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        title: '无锡·ACG乐鱼 · 动漫宅舞大赛',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/openplatform/202305/Ca8DpIq71684724120367.jpeg@350w_466h.jpeg'
       }, {
-        price: 1678,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
+        price: 234,
+        title: '哔哩哔哩 小电视2233 口袋本贴纸便签套装',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/vendor/c4/4b/c44bcf11f7391b1636032c14842cf4c7.png'
       }, {
         price: 924,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
-        image: 'https://i0.hdslb.com/bfs/mall/vendor/c4/4b/c44bcf11f7391b1636032c14842cf4c7.png'
+        title: 'BILIBILIGOODS 2233 时空战姬系列 魔方',
+        shop: 'bilibili会员购',
+        image: 'https://i0.hdslb.com/bfs/mall/vendor/55/dc/55dc7bedb8f1ddf98606256c091b07c6.png'
       }, {
         price: 25,
         title: '哔哩哔哩 2233下午茶系列 色纸',
-        shop: '李白杜甫白居易旗舰店',
+        shop: 'bilibili会员购',
         image: 'https://i0.hdslb.com/bfs/mall/mall/7f/ee/7fee78a7aaf0d601aa676b0c4e979e6c.png'
       }, {
-        price: 8243,
-        title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-        shop: '李白杜甫白居易旗舰店',
-        image: 'https://i0.hdslb.com/bfs/mall/vendor/c4/4b/c44bcf11f7391b1636032c14842cf4c7.png'
+        price: 103,
+        title: 'BILIBILIGOODS 2233 时空战姬 真无线TWS降噪蓝牙耳机 M2',
+        shop: 'bilibili会员购',
+        image: 'https://i0.hdslb.com/bfs/mall/vendor/b3/26/b3260bd074300caae51a14a8381495fa.png'
       }]
     };
   },
