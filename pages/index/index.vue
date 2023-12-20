@@ -407,12 +407,11 @@
 
 
 			uni.request({
-				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
+				url: '/api',
 				method: 'GET',
 				data: {
-					ps: 12,
-					rid: 1
-
+					version:1,
+					ps:10
 				},
 				success: (res) => {
 					console.log(res.data);
@@ -423,11 +422,11 @@
 
 
 			uni.request({
-				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
+				url: '/api',
 				method: 'GET',
 				data: {
-					ps: 12,
-					rid: 1
+					version:1,
+					ps:10
 				},
 				success: (res) => {
 					console.log(res.data);
@@ -467,11 +466,11 @@
 		},
 		onPullDownRefresh() {
 			uni.request({
-				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
+				url: '/api',
 				method: 'GET',
 				data: {
-					ps:12,
-					rid:1
+					version:1,
+					ps:10
 				},
 				success: (res) => {
 					this.videoUrl1 = res.data.item;
@@ -481,11 +480,11 @@
 
 
 			uni.request({
-				url: 'https://api.bilibili.com/x/web-interface/dynamic/region',
+				url: '/api',
 				method: 'GET',
 				data: {
-					ps:12,
-					rid:1
+					version:1,
+					ps:10
 				},
 				success: (res) => {
 					this.videoUrl2 = res.data.item;

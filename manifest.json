@@ -42,7 +42,42 @@
             },
             "ios" : {},
             /* ios打包配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {},
+            "splashscreen" : {
+                "androidStyle" : "common"
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            }
         }
     },
     /* SDK配置 */
@@ -61,18 +96,24 @@
     // 	"style":"hidden"
     // },
     "vueVersion" : "2",
-	// h5端跨域配置
-		"h5": {
-			"devServer": {
-				"disableHostCheck": true,
-				"proxy": {
-					"/api": {
-						"target": "https://www.uinav.com",
-						"changeOrigin": true,
-						"secure": false
-						
-					}
-				}
-			}
-		}
+    "h5" : {
+        "title" : "H5",
+        "devServer" : {
+            "port" : 6065,
+            // "https": false,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api" : {
+                    //app是需要转发的请求(所有带有 /api 前缀的请求都会转发给 target 后的地址(代理1)
+                    "target" : "https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=10", // 你的目标接口域名
+                    "changeOrigin" : true, // 开启代理
+                    "secure" : true, //
+                    "pathRewrite" : {
+                        //去除请求前缀，保证交给后台服务器的是正常请求地址(必须配置)
+                        "^/api" : ""
+                    }
+                }
+            }
+        }
+    }
 }

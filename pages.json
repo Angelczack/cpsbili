@@ -35,6 +35,11 @@
 			"navigationStyle": "custom"
 		}
 	}, {
+		"path": "pages/shop/shoppingcart",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}, {
 		"path": "pages/dongtai/dongtai",
 		"style": {
 			"navigationStyle": "custom"
@@ -84,7 +89,7 @@
 				"selectedIconPath": "./static/tabbar/wind-select.png"
 			}, {
 				"pagePath": "pages/add/add",
-				"text": "添加",
+				// "text": "添加",
 				"iconPath": "./static/tabbar/add.png",
 				"selectedIconPath": "./static/tabbar/add.png"
 			},
