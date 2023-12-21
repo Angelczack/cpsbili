@@ -365,17 +365,18 @@
 			},
 			clear() {
 				this.$refs.uWaterfall.clear();
+			},
+			// 跳转到购物车页
+			ToShoppingcart() {
+				uni.navigateTo({
+					url: '/pages/shop/shoppingcart'
+				});
 			}
 		},
+		
+		
 		onPullDownRefresh() {
 			uni.stopPullDownRefresh();
-		},
-		
-		// 跳转到购物车页
-		ToShoppingcart() {
-			uni.navigateTo({
-				url: '/shop/shoppingcart'
-			});
 		}
 	}
 </script>

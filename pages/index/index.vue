@@ -410,8 +410,7 @@
 				url: '/api',
 				method: 'GET',
 				data: {
-					version:1,
-					ps:10
+					
 				},
 				success: (res) => {
 					console.log(res.data);
@@ -425,8 +424,7 @@
 				url: '/api',
 				method: 'GET',
 				data: {
-					version:1,
-					ps:10
+					
 				},
 				success: (res) => {
 					console.log(res.data);
@@ -469,8 +467,7 @@
 				url: '/api',
 				method: 'GET',
 				data: {
-					version:1,
-					ps:10
+					
 				},
 				success: (res) => {
 					this.videoUrl1 = res.data.item;
@@ -483,8 +480,7 @@
 				url: '/api',
 				method: 'GET',
 				data: {
-					version:1,
-					ps:10
+					
 				},
 				success: (res) => {
 					this.videoUrl2 = res.data.item;

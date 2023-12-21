@@ -2,7 +2,7 @@ module.exports = {
 	devServer:{
 		proxy:{
 			'/':{
-				target:'https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=10',
+				target:'https://api.bilibili.com/x/web-interface/popular?ps=10&pn=1',
 				changeOrigin:true
 			}
 		}

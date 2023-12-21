@@ -105,7 +105,7 @@
             "proxy" : {
                 "/api" : {
                     //app是需要转发的请求(所有带有 /api 前缀的请求都会转发给 target 后的地址(代理1)
-                    "target" : "https://api.bilibili.com/x/web-interface/index/top/rcmd?version=1&ps=10", // 你的目标接口域名
+                    "target" : "https://api.bilibili.com/x/web-interface/popular?ps=10&pn=1", // 你的目标接口域名
                     "changeOrigin" : true, // 开启代理
                     "secure" : true, //
                     "pathRewrite" : {
