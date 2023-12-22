@@ -36,6 +36,11 @@
 			"navigationStyle": "custom"
 		}
 	}, {
+		"path": "pages/shop/ItemDetail",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
 		"path": "pages/shop/shoppingcart",
 		"style": {
 			"navigationStyle": "custom"
