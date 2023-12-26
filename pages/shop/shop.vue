@@ -160,7 +160,7 @@
 		<!-- <u-button @click="clear">清空列表</u-button> -->
 		<u-waterfall v-model="flowList" ref="uWaterfall">
 			<template v-slot:left="{leftList}">
-				<view class="demo-warter" v-for="(item, index) in leftList" :key="index">
+				<view class="demo-warter" v-for="(item, index) in leftList" :key="index" @click="gotoItemDetail">
 					<!-- 警告：微信小程序中需要hx2.8.11版本才支持在template中结合其他组件，比如下方的lazy-load组件 -->
 					<u-lazy-load threshold="-450" border-radius="10" :image="'https://images.weserv.nl/?url=' + item.image" :index="index"></u-lazy-load>
 					<view class="demo-title">
@@ -177,7 +177,7 @@
 			</template>
 			
 			<template v-slot:right="{rightList}">
-				<view class="demo-warter" v-for="(item, index) in rightList" :key="index">
+				<view class="demo-warter" v-for="(item, index) in rightList" :key="index" @click="gotoItemDetail">
 					<u-lazy-load threshold="-450" border-radius="10" :image="'https://images.weserv.nl/?url=' + item.image" :index="index"></u-lazy-load>
 					<view class="demo-title">
 						{{item.title}}
@@ -351,6 +351,12 @@
 			}, 1000)
 		},
 		methods: {
+			// 跳转到商品详情页
+			gotoItemDetail() {
+				uni.navigateTo({
+					url:'/pages/shop/ItemDetail'
+				})
+			},
 			addRandomData() {
 				for(let i = 0; i < 10; i++) {
 					let index = this.$u.random(0, this.list.length - 1);
@@ -373,8 +379,12 @@
 				});
 			}
 		},
-		
-		
+		// 跳转到我的页面
+		ToMy() {
+			uni.navigateTo({
+				url:'/pages/my/my'
+			})
+		},
 		onPullDownRefresh() {
 			uni.stopPullDownRefresh();
 		}

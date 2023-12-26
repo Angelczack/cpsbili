@@ -5,19 +5,20 @@
 		<!-- 商品的图片信息 -->
 
 		<view class="ItemImg">
-			<swiper style="width: 100%; height: 400px;" :indicator-dots="true" indicator-color="#fff" indicator-active-color="#ff9bb9" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
+			<swiper style="width: 100%; height: 400px;" :indicator-dots="true" indicator-color="#fff"
+				indicator-active-color="#ff9bb9" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 				<swiper-item v-for="(item,index) in ItemImgUrl" :key="index">
 					<view class="swiper-item">
 						<image :src="item.src"></image>
 					</view>
 				</swiper-item>
 			</swiper>
-			
+
 
 
 			<!-- 功能区 -->
 			<view class="Effbtns">
-				<view class="goback">
+				<view class="goback" @click="goBackshopPages">
 					<u-icon name="arrow-left" size="40"></u-icon>
 				</view>
 
@@ -25,7 +26,6 @@
 					<u-icon name="share-fill" size="40"></u-icon>
 				</view>
 			</view>
-			
 		</view>
 
 		<view class="ItemBox">
@@ -157,17 +157,26 @@
 
 <script>
 	export default {
-		name: "shoppingcart",
+		name: "ItemDetail",
 		data() {
 			return {
-				
+
 				// 轮播图信息
-				ItemImgUrl:[
-					{src:'/static/shop/1.PNG'},
-					{src:'/static/shop/2.PNG'},
-					{src:'/static/shop/3.PNG'},
-					{src:'/static/shop/4.PNG'},
-					{src:'/static/shop/5.PNG'}
+				ItemImgUrl: [{
+						src: '/static/shop/1.PNG'
+					},
+					{
+						src: '/static/shop/2.PNG'
+					},
+					{
+						src: '/static/shop/3.PNG'
+					},
+					{
+						src: '/static/shop/4.PNG'
+					},
+					{
+						src: '/static/shop/5.PNG'
+					}
 				],
 				typesDigit: [{
 						title: '尺寸',
@@ -201,9 +210,13 @@
 				]
 			}
 		},
-
 		methods: {
-
+			//返回商品页
+			goBackshopPages() {
+				uni.switchTab({
+					url: '/pages/shop/shop'
+				})
+			}
 		}
 	}
 </script>

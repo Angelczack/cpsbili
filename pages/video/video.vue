@@ -2,6 +2,20 @@
 
 <template>
 	<view>
+		
+		<view class="viedoBack">
+			<view class="Effbtns">
+				<view class="goback" @click="goBackIndex">
+					<u-icon name="arrow-left" size="40" color="#fff"></u-icon>
+				</view>
+			
+				<view class="share">
+					<!-- <u-icon name="share-fill" size="40"></u-icon> -->
+				</view>
+			</view>
+		</view>
+		
+		
 		<!-- <video :src="src" controls id="myvideo"></video> -->
 		<div>
 			<video :src="revideos[0].uri" style="width: 100%; height: 220px;" duration="2000"></video>
@@ -278,6 +292,11 @@
 
 		// },
 		methods: {
+			goBackIndex() {
+				uni.switchTab({
+					url:'/pages/index/index'
+				})
+			},
 			clickTodanmu() {
 				console.log("done");
 			},
@@ -332,6 +351,47 @@
 		margin: 0;
 		padding: 0;
 		background-color: rgb(251, 251, 251);
+	}
+	
+	/* 功能按钮区 */
+	
+	.viedoBack {
+		width: 100%;
+	}
+	.Effbtns {
+		width: 100%;
+		height: 60px;
+		z-index: 10;
+		/* background-color: #fff; */
+		position: absolute;
+		top: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.goback {
+		width: 30px;
+		height: 30px;
+		margin-left: 15px;
+		border-radius: 50px;
+		/* background-color: #fff; */
+		opacity: 0.9;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.share {
+		width: 30px;
+		height: 30px;
+		margin-right: 15px;
+		border-radius: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* background-color: #fff; */
+		opacity: 0.6;
 	}
 
 	#myvideo {
