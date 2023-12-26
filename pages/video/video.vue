@@ -4,7 +4,7 @@
 	<view>
 		<!-- <video :src="src" controls id="myvideo"></video> -->
 		<div>
-			<video src="/static/video/video-1.mp4" style="width: 100%; height: 220px;" duration="2000"></video>
+			<video :src="revideos[0].uri" style="width: 100%; height: 220px;" duration="2000"></video>
 		</div>
 
 
@@ -33,7 +33,7 @@
 				</view>
 				<view class="userdesc">
 					<!-- 用户的昵称 -->
-					<text class="name" decode="true">Anglczack\n</text>
+					<text class="name" decode="true">{{revideos[0].avator}}</text>
 					<view>
 						<!-- 粉丝数 -->
 						<text class="fans">18.2万粉丝</text>
@@ -53,7 +53,7 @@
 				</view>
 				<!-- 视频标题 -->
 				<view id="vtitle" @click.native="gotoheight">
-					<text>hellow world !!!</text>
+					<text>{{revideos[0].vtitle}}</text>
 					<u-icon name="arrow-down" size="30" id="vicon"></u-icon>
 				</view>
 			</view>
@@ -125,7 +125,8 @@
 			</view>
 			<!-- 视频的详情 -->
 			<view class="vdescs">
-				<text style="margin-left: 10px; font-size: 14px; font-weight: 900; display: block; width: 100%; height:25px; overflow: hidden;">{{item.title}}</text>
+				<text
+					style="margin-left: 10px; font-size: 14px; font-weight: 900; display: block; width: 100%; height:25px; overflow: hidden;">{{item.title}}</text>
 				<view class="author">
 					<u-icon name="account" size="35"></u-icon>
 					<text style="font-size: 16px; display: block; width: 100%; height:30px;">{{item.author}}</text>
@@ -209,16 +210,16 @@
 					}
 				],
 				src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
-				
+
 				// 获取视频源
-				revideos:[],
-				videoUrl:[]
-				
+				revideos: [],
+				videoUrl: []
+
 			}
 		},
 		mounted() {
-			
-			
+
+
 			uni.request({
 				url: 'http://api.bilibili.cn/recommend',
 				method: 'GET',
@@ -231,29 +232,40 @@
 					console.log(this.videoUrl);
 				}
 			})
-			
+
 			uni.getStorage({
-				key:'usericon',
+				key: 'usericon',
 				success: (res) => {
-				this.usericon = res.data;
-				console.log(this.usericon);
+					this.usericon = res.data;
+					// console.log(this.usericon);
+				}
+			})
+
+			// 获取视频的详细信息API
+			// uni.getStorage({
+			// 	key: 'aid',
+			// 	success: (res) => {
+			// 		this.revideos =res;
+			// 		console.log(res);
+			// 	}
+			// })
+
+			//获取视频的详细信息
+			uni.getStorage({
+				key: 'vlist',
+				success: (res) => {
+					this.revideos = JSON.parse(res.data);
+					console.log(this.revideos);
 				}
 			})
 			
-			
-			uni.getStorage({
-				key: 'aid',
-				success: (res) => {
-					this.revideos =res;
-					console.log(res);
-				}
-			})
-			
+			// console.log(this.revideos[0].vtitle);
+
 			uni.request({
-				url:'https://www.bilibili.com/video/14955232',
-				method:'GET',
+				url: 'https://www.bilibili.com/video/14955232',
+				method: 'GET',
 				success: (res) => {
-					console.log(res);	
+					console.log(res);
 				}
 			})
 		},
@@ -292,18 +304,18 @@
 			}
 		},
 		onPullDownRefresh() {
-				uni.request({
-					url: 'http://api.bilibili.cn/recommend',
-					method: 'GET',
-					data: {
-						page: Math.random() * 10 + 40,
-						pagesize: 4
-					},
-					success: (res) => {
-						this.videoUrl = res.data.list;
-						console.log(this.videoUrl1);
-					}
-				})
+			uni.request({
+				url: 'http://api.bilibili.cn/recommend',
+				method: 'GET',
+				data: {
+					page: Math.random() * 10 + 40,
+					pagesize: 4
+				},
+				success: (res) => {
+					this.videoUrl = res.data.list;
+					console.log(this.videoUrl1);
+				}
+			})
 			uni.stopPullDownRefresh();
 		}
 	}

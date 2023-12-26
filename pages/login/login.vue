@@ -166,8 +166,8 @@
 		width: 100%;
 		height: 200rpx;
 		/* background-color: skyblue; */
-		background: url(/static/login/2233login.png) no-repeat;
-		background-size: 90% 120%;
+		background: url(https://s1.hdslb.com/bfs/static/blive/live-interaction-center/static/img/969.b89d6bb2.png) no-repeat;
+		background-size: 100% 125%;
 		background-position: center;
 	}
 
