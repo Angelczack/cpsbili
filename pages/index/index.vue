@@ -96,8 +96,7 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;">
 						<!-- swiper -->
-						<u-swiper
-							style="width: 95%; height: 200px; margin: 20px auto; border-radius: 5px; overflow: hidden;"
+						<u-swiper style="width: 95%; margin: 20px auto; border-radius: 5px; "
 							:indicator-dots="true" :title="true" :list="imgUrl" :effect3d="true" :autoplay="true">
 						</u-swiper>
 
@@ -264,12 +263,42 @@
 				//弹窗
 				isshow: false,
 				imgUrl: [{
-						image: '/static/lunbo/1.PNG',
-						title: '111'
+						image: '/static/lunbo/L1.jpg',
+						title: '31日20点，中外组合齐聚最美的夜！'
 					},
-					"/static/lunbo/2.JPG",
-					"/static/lunbo/3.png",
-					"/static/lunbo/4.png"
+					{
+						image: '/static/lunbo/L2.jpg',
+						title: '勇度感动回归！星爵兄妹重逢'
+					},
+					{
+						image: '/static/lunbo/L3.jpg',
+						title: '冬季史低折扣！大航海经营冒险游戏'
+					},
+					{
+						image: '/static/lunbo/L4.jpg',
+						title: '华为如何把美国电影吹的牛实现！沉浸体验智界S7'
+					},
+					{
+						image: '/static/lunbo/L5.png',
+						title: '一次性玩个够！'
+					},
+					{
+						image: '/static/lunbo/L6.png',
+						title: '义无反顾为爱奔赴的勇气我能拥有吗？'
+					},
+					{
+						image: '/static/lunbo/L7.jpg',
+						title: 'B站一年一度的OC设计大赛！'
+					},
+					{
+						image: '/static/lunbo/L8.png',
+						title: '亮出你的格斗技，赢惊喜好礼！'
+					},
+					{
+						image: '/static/lunbo/L9.jpg',
+						title: '少女前线2：追放 公测开启！'
+					},
+
 				],
 				list: [{
 						name: '首页'
@@ -301,105 +330,105 @@
 				],
 				// 视频测试数据
 				videoUrldemo1: [{
-						pic: 'https://i0.hdslb.com/bfs/archive/76c954a3e91f239fe4361e3050d1eb5398a55a4b.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '喜欢猫娘的有福了',
-						vlist: [{
-							avator: "流一",
-							vtitle: '喜欢猫娘的有福了',
-							uri: '/static/video/1.mp4',
-							desc:'—现在的任务，极其重要。嗯…是什么任务呢？—急急急！想在游戏里撸猫！！！佩里缇亚：流一摄影：卡拉后勤：欣珀，唐宝',
-							coverImg:''
-						}]
-					},{
-						pic: 'https://i0.hdslb.com/bfs/archive/fc683af590b623de8474a76469af7d1c540a4497.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '这就是俄罗斯狗熊 4700hp 护甲329 魔抗201',
-						vlist:[{
-							avator:'超Carry的柴西',
-							vtitle:'这就是俄罗斯狗熊 4700hp 护甲329 魔抗201',
-							uri: '/static/video/2.mp4',
-							desc:'全程国外合法拍摄，危险行为请勿模仿！！！在我们前面的那个俄罗斯老哥真的给我看懵了，太勇了，骆歆也挺牛的，有点像本地人了，我全程痛苦面具哈哈哈哈哈，但是tom还是挺乖的，有一种又可爱又可怕的感觉！！表面上看我花了1000亏了，实则只花0.0025得到4w硬币血赚，是吧是吧是吧是吧（暗示投币）后面还有好几期俄罗斯视频，求求啦给我个三连吧！！！这个对我真的很重要！！',
-							coverImg:''
-						}]
-					},{
-						pic: 'https://i0.hdslb.com/bfs/archive/37d48b9b6e41c741c522b829f54a004d6847b32a.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '【芊芊｜15岁生日作】❤️我可以成为你的推吗~',
-						vlist:[{
-							avator:'一只路过芊',
-							vtitle:'【芊芊｜15岁生日作】❤️我可以成为你的推吗~',
-							uri: '/static/video/3.mp4',
-							desc:'☆来许个愿吧！☆摄影：@盖聂大书 ☆参考振幅：BV1b54y1U7Se☆原创振幅：BV1ds411w7dn————————当你看到这条视频时我已经15岁了 时隔一年录了14岁很想录的偶像宣言 衣服也是一年前就准备好的 14岁喜欢上了宅舞 认识了很多朋友 做了我喜欢的事情 出了喜欢的角色 收获了喜欢我的粉丝 很多姿多彩 谢谢认识了你们！希望我的15岁能够继续做我所热爱的事情 虽然一年稿没更多少 舞技也没见长（）舞蹈还有诸多不足但我会继续坚持下去继续加油的！新的一岁里也请继续努力吧！！'
-						}]
-					},{
-						pic: 'https://i0.hdslb.com/bfs/archive/7fc4a79d4ef1eea8f71d21be90c3873d61ad11a6.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '国服第一小美人鱼，入股不亏！',
-						vlist:[{
-							avator:'河野华',
-							vtitle:'国服第一小美人鱼，入股不亏！',
-							uri: '/static/video/4.mp4',
-							desc:'评价一下，家人们，不萝卜心！'
-						}]
-					},{
-						pic: 'https://i0.hdslb.com/bfs/archive/d585ccd7c79374f14208f0d0d9f6adf5abc713dd.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '“请问，你多久没有喜欢上一个女孩子了...？”',
-						vlist:[{
-							avator:'血小板゚゚゚゚゚゚',
-							vtitle:'“请问，你多久没有喜欢上一个女孩子了...？”',
-							uri: '/static/video/5.mp4',
-							desc:'成长的很大一部分是接受，接受分道扬镳 接受世事无常 接受孤独挫败...接受突如其来的无力感 接受自己的不完美任何事情。只要你接受 就不会痛苦，也不要问那些突然离开的人，倒不如去和一直陪在身边的人说声谢谢。成长的过程又漫长有艰辛 但苦日子终将会到头的，可是当我越来越成熟时候 居然还是怀念最初的纯真.....BGM:Letting Go（Ft.TINA)（Remix）逐帧修复画质为4k 60fps可做壁纸！观前开 填充 4K 体验更佳！歌词排版：过期休眠'
-						}]
-					}],
-					
-					
+					pic: 'https://i0.hdslb.com/bfs/archive/76c954a3e91f239fe4361e3050d1eb5398a55a4b.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '喜欢猫娘的有福了',
+					vlist: [{
+						avator: "流一",
+						vtitle: '喜欢猫娘的有福了',
+						uri: '/static/video/1.mp4',
+						desc: '—现在的任务，极其重要。嗯…是什么任务呢？—急急急！想在游戏里撸猫！！！佩里缇亚：流一摄影：卡拉后勤：欣珀，唐宝',
+						coverImg: ''
+					}]
+				}, {
+					pic: 'https://i0.hdslb.com/bfs/archive/fc683af590b623de8474a76469af7d1c540a4497.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '这就是俄罗斯狗熊 4700hp 护甲329 魔抗201',
+					vlist: [{
+						avator: '超Carry的柴西',
+						vtitle: '这就是俄罗斯狗熊 4700hp 护甲329 魔抗201',
+						uri: '/static/video/2.mp4',
+						desc: '全程国外合法拍摄，危险行为请勿模仿！！！在我们前面的那个俄罗斯老哥真的给我看懵了，太勇了，骆歆也挺牛的，有点像本地人了，我全程痛苦面具哈哈哈哈哈，但是tom还是挺乖的，有一种又可爱又可怕的感觉！！表面上看我花了1000亏了，实则只花0.0025得到4w硬币血赚，是吧是吧是吧是吧（暗示投币）后面还有好几期俄罗斯视频，求求啦给我个三连吧！！！这个对我真的很重要！！',
+						coverImg: ''
+					}]
+				}, {
+					pic: 'https://i0.hdslb.com/bfs/archive/37d48b9b6e41c741c522b829f54a004d6847b32a.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '【芊芊｜15岁生日作】❤️我可以成为你的推吗~',
+					vlist: [{
+						avator: '一只路过芊',
+						vtitle: '【芊芊｜15岁生日作】❤️我可以成为你的推吗~',
+						uri: '/static/video/3.mp4',
+						desc: '☆来许个愿吧！☆摄影：@盖聂大书 ☆参考振幅：BV1b54y1U7Se☆原创振幅：BV1ds411w7dn————————当你看到这条视频时我已经15岁了 时隔一年录了14岁很想录的偶像宣言 衣服也是一年前就准备好的 14岁喜欢上了宅舞 认识了很多朋友 做了我喜欢的事情 出了喜欢的角色 收获了喜欢我的粉丝 很多姿多彩 谢谢认识了你们！希望我的15岁能够继续做我所热爱的事情 虽然一年稿没更多少 舞技也没见长（）舞蹈还有诸多不足但我会继续坚持下去继续加油的！新的一岁里也请继续努力吧！！'
+					}]
+				}, {
+					pic: 'https://i0.hdslb.com/bfs/archive/7fc4a79d4ef1eea8f71d21be90c3873d61ad11a6.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '国服第一小美人鱼，入股不亏！',
+					vlist: [{
+						avator: '河野华',
+						vtitle: '国服第一小美人鱼，入股不亏！',
+						uri: '/static/video/4.mp4',
+						desc: '评价一下，家人们，不萝卜心！'
+					}]
+				}, {
+					pic: 'https://i0.hdslb.com/bfs/archive/d585ccd7c79374f14208f0d0d9f6adf5abc713dd.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '“请问，你多久没有喜欢上一个女孩子了...？”',
+					vlist: [{
+						avator: '血小板゚゚゚゚゚゚',
+						vtitle: '“请问，你多久没有喜欢上一个女孩子了...？”',
+						uri: '/static/video/5.mp4',
+						desc: '成长的很大一部分是接受，接受分道扬镳 接受世事无常 接受孤独挫败...接受突如其来的无力感 接受自己的不完美任何事情。只要你接受 就不会痛苦，也不要问那些突然离开的人，倒不如去和一直陪在身边的人说声谢谢。成长的过程又漫长有艰辛 但苦日子终将会到头的，可是当我越来越成熟时候 居然还是怀念最初的纯真.....BGM:Letting Go（Ft.TINA)（Remix）逐帧修复画质为4k 60fps可做壁纸！观前开 填充 4K 体验更佳！歌词排版：过期休眠'
+					}]
+				}],
+
+
 				videoUrldemo2: [{
-						pic: 'https://i0.hdslb.com/bfs/archive/577e10309a901489acbac635e3880d0c3bba50cc.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '影视飓风将停止制作25帧视频',
-						vlist:[{
-							avator:'影视飓风',
-							vtitle:'相信我//爱在整个宇宙 ❥ 神的随波逐流',
-							uri: '/static/video/6.mp4',
-							desc:'过了将近8年的时间，我们决定将频道的大部分节目帧率都改为29.97帧和59.94帧。至于这其中的原因，欢迎收看本期节目～如果这期视频对你有帮助，请多多支持我们，并把视频分享给有需要的人！'
-						}]
-					},{
+					pic: 'https://i0.hdslb.com/bfs/archive/577e10309a901489acbac635e3880d0c3bba50cc.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '影视飓风将停止制作25帧视频',
+					vlist: [{
+						avator: '影视飓风',
+						vtitle: '相信我//爱在整个宇宙 ❥ 神的随波逐流',
+						uri: '/static/video/6.mp4',
+						desc: '过了将近8年的时间，我们决定将频道的大部分节目帧率都改为29.97帧和59.94帧。至于这其中的原因，欢迎收看本期节目～如果这期视频对你有帮助，请多多支持我们，并把视频分享给有需要的人！'
+					}]
+				}, {
 
-						pic: 'https://i0.hdslb.com/bfs/archive/70fdfccc8198dc4064707959728053084987eae5.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '起猛了，看见真的砂狼白子了 4K',
-						vlist:[{
-							avator:'禾兮子',
-							vtitle:'起猛了，看见真的砂狼白子了 4K',
-								uri: '/static/video/7.mp4',
-								desc:'尊嘟好喜欢白毛啊prprpr我是白子的狗冬天天黑得太快了！还有这个bgm好难卡点qwq！因为白子两个眼睛不一样，但是瞳孔没法变成白色，所以就用了这种办法？摄影@江江江木风'
-						}]
-					},{
+					pic: 'https://i0.hdslb.com/bfs/archive/70fdfccc8198dc4064707959728053084987eae5.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '起猛了，看见真的砂狼白子了 4K',
+					vlist: [{
+						avator: '禾兮子',
+						vtitle: '起猛了，看见真的砂狼白子了 4K',
+						uri: '/static/video/7.mp4',
+						desc: '尊嘟好喜欢白毛啊prprpr我是白子的狗冬天天黑得太快了！还有这个bgm好难卡点qwq！因为白子两个眼睛不一样，但是瞳孔没法变成白色，所以就用了这种办法？摄影@江江江木风'
+					}]
+				}, {
 
-						pic: 'https://i0.hdslb.com/bfs/archive/9d14eba59b167cf8512da41b68dd14a15e85cdfa.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '有的尼康娇生惯养，我的尼康驰骋沙场',
-						vlist:[{
-							avator:'虹云闪闪',
-							vtitle:'有的尼康娇生惯养，我的尼康驰骋沙场',
-							uri: '/static/video/8.mp4',
-							desc:'-'
-						}]
-					},{
+					pic: 'https://i0.hdslb.com/bfs/archive/9d14eba59b167cf8512da41b68dd14a15e85cdfa.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '有的尼康娇生惯养，我的尼康驰骋沙场',
+					vlist: [{
+						avator: '虹云闪闪',
+						vtitle: '有的尼康娇生惯养，我的尼康驰骋沙场',
+						uri: '/static/video/8.mp4',
+						desc: '-'
+					}]
+				}, {
 
-						pic: 'https://i0.hdslb.com/bfs/archive/9d682685c8e6584047cbde2932cfda9a15f6ae6f.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: '“这首宝藏神曲《清空》，是否能唤起你灵魂深处的记忆”',
-						vlist:[{
-							avator:'银发の半精灵',
-							vtitle:'“这首宝藏神曲《清空》，是否能唤起你灵魂深处的记忆”',
-							uri: '/static/video/9.mp4',
-							desc:'人要为心中所爱去努力，要为人生坚持去努力，做自己认为对的事情，但也要接受结果的事与愿违。BGM：清空'
-						}]
-					},{
+					pic: 'https://i0.hdslb.com/bfs/archive/9d682685c8e6584047cbde2932cfda9a15f6ae6f.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: '“这首宝藏神曲《清空》，是否能唤起你灵魂深处的记忆”',
+					vlist: [{
+						avator: '银发の半精灵',
+						vtitle: '“这首宝藏神曲《清空》，是否能唤起你灵魂深处的记忆”',
+						uri: '/static/video/9.mp4',
+						desc: '人要为心中所爱去努力，要为人生坚持去努力，做自己认为对的事情，但也要接受结果的事与愿违。BGM：清空'
+					}]
+				}, {
 
-						pic: 'https://i0.hdslb.com/bfs/archive/0c138020168f1b4dc65ce8301f2fa81369873aee.jpg@672w_378h_1c_!web-home-common-cover.webp',
-						title: 'Honey~ ❤️ 超甜换装，三倍快乐！【王心凌 honey 翻跳】',
-						vlist:[{
-							avator:'咕gugugugu',
-							vtitle:'Honey~ ❤️ 超甜换装，三倍快乐！【王心凌 honey 翻跳】',
-							uri: '/static/video/10.mp4',
-							desc:'穿小裙子合作翻跳了honey!喜欢就多多三连呀!——————————————————出镜：清浅   无忌   咕咕音乐：王心凌-Honey编舞：M子 BV1vz411q71z视频摄影：蓝凛视频后期：清浅 无忌服装：熊之工作室——与星光'
-						}]
-					}],
+					pic: 'https://i0.hdslb.com/bfs/archive/0c138020168f1b4dc65ce8301f2fa81369873aee.jpg@672w_378h_1c_!web-home-common-cover.webp',
+					title: 'Honey~ ❤️ 超甜换装，三倍快乐！【王心凌 honey 翻跳】',
+					vlist: [{
+						avator: '咕gugugugu',
+						vtitle: 'Honey~ ❤️ 超甜换装，三倍快乐！【王心凌 honey 翻跳】',
+						uri: '/static/video/10.mp4',
+						desc: '穿小裙子合作翻跳了honey!喜欢就多多三连呀!——————————————————出镜：清浅   无忌   咕咕音乐：王心凌-Honey编舞：M子 BV1vz411q71z视频摄影：蓝凛视频后期：清浅 无忌服装：熊之工作室——与星光'
+					}]
+				}],
 				current: 0,
 				swiperCurrent: 0,
 				tabsHeight: 0,
