@@ -357,6 +357,12 @@
 					url:'/pages/shop/ItemDetail'
 				})
 			},
+			// 跳转到我的页面
+			ToMy() {
+				uni.switchTab({
+					url:'/pages/my/my'
+				})
+			},
 			addRandomData() {
 				for(let i = 0; i < 10; i++) {
 					let index = this.$u.random(0, this.list.length - 1);
@@ -378,12 +384,6 @@
 					url: '/pages/shop/shoppingcart'
 				});
 			}
-		},
-		// 跳转到我的页面
-		ToMy() {
-			uni.navigateTo({
-				url:'/pages/my/my'
-			})
 		},
 		onPullDownRefresh() {
 			uni.stopPullDownRefresh();

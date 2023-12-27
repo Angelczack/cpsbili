@@ -18,7 +18,7 @@
 		
 		<!-- <video :src="src" controls id="myvideo"></video> -->
 		<div>
-			<video :src="revideos[0].uri" style="width: 100%; height: 220px;" duration="2000"></video>
+			<video id="myVideo" :src="revideos[0].uri" style="width: 100%; height: 220px;" autobufer="true" :danmu-list="danmuList" enable-danmu danmu-btn page-gesture="true" enable-progress-gesture="true" show-mute-btn="true" :direction="90" show-loading controls></video>
 		</div>
 
 
@@ -32,8 +32,8 @@
 			</view>
 
 			<view class="chats-right">
-				<input type="text" v-model="inps" @click="clickTodanmu">
-				<button class="btns" plain="true" style="border-radius: 10px; margin-left: 10px;">发送</button>
+				<input type="text" v-model="danmuValue" class="uni-input" placeholder="在此处输入弹幕内容">
+				<button class="btns" plain="true" style="border-radius: 10px; margin-left: 10px;" @click="sendDanmu">发送</button>
 			</view>
 		</view>
 
@@ -73,8 +73,7 @@
 			</view>
 
 			<view id="hbox" class="hbox">
-				<text id="conts" decode="true">nsm31998519\n作品类型: 翻奏曲\n简介:
-					こんにちは！ニコニコオーケストラです。\nニコニコオーケストラは2017年8月2日で創立10周年を迎え、2017年9月30日で初めてのオフ会から10年となりました。\n\nそして、この動画の投稿をもって10年の活動に終止符を打ち、コミュニティを解散致します。\n\n最後にもう一度、あの頃を思い出して「ニコニコ動画流星群」を150人で演奏してみました。\nどうぞ最後までお楽しみ下さい。\n\nこの10年でサブカル演奏オフ・演奏会の文化は大きく広がりました。\n参加者各自それぞ</text>
+				<text id="conts" decode="true">{{revideos[0].desc}}</text>
 			</view>
 
 			<view class="playNums">
@@ -132,10 +131,10 @@
 
 
 		<!-- 推荐视频 -->
-		<view class="revideos" v-for="(item,index) in videoUrl" :key="index">
+		<view class="revideos" v-for="(item,index) in reUrls" :key="index">
 			<!-- 视频封面 -->
 			<view class="covers">
-				<image :src="'https://images.weserv.nl/?url='+item.pic" style="width: 100%; height: 100%;"></image>
+				<image :src="'https://images.weserv.nl/?url=' + item.src" style="width: 100%; height: 100%;"></image>
 			</view>
 			<!-- 视频的详情 -->
 			<view class="vdescs">
@@ -143,7 +142,7 @@
 					style="margin-left: 10px; font-size: 14px; font-weight: 900; display: block; width: 100%; height:25px; overflow: hidden;">{{item.title}}</text>
 				<view class="author">
 					<u-icon name="account" size="35"></u-icon>
-					<text style="font-size: 16px; display: block; width: 100%; height:30px;">{{item.author}}</text>
+					<text style="font-size: 16px; display: block; width: 100%; height:30px;">{{item.avator}}</text>
 				</view>
 
 				<!-- 小窗口视频信息   播放数 -->
@@ -204,33 +203,61 @@
 					}
 				],
 				// 推荐视频
+				videoUrl: [],
 				reUrls: [{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/7e2179093e42f9718ad61102d6f052eb872db7f6.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						avator:'学姐圆',
+						plays:'34w',
+						title:'“少年，你有听见时间的声音吗？”'
 					},
 					{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/4724e3f3752d41b26934b55e9fa0a4fb0d5ee68a.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						title:'当一个社团有了两支500定！？？',
+						avator:'哲摄-V',
+						plays:'1.6w'
 					},
 					{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/c11a9fa3ca18f8d79c62c9f48e6b501f55f68c1e.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						title:'【原神】小腿一翘💙芙芙驾到！',
+						avator:'千夜未来Senyamiku',
+						plays:'99.7w'
 					},
 					{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/a41ec6cc3b7b5fb11220a777c18c58a632d8828e.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						title:'“动漫给予了我们从未有过的人生”',
+						avator:'星宇动漫社',
+						palys:'30.5w'
 					},
 					{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/62092d9c642d4e95b639f41cbcb727d984c83c6e.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						title:'一 切 都 是 日富美 干 的！！4K【禾兮】',
+						avator:'禾兮子',
+						plays:'28w'
 					},
 					{
-						src: "https://i1.hdslb.com/bfs/archive/6c276361c39e21d1707b05821dd5e4856294a3b4.jpg"
+						src: "https://i0.hdslb.com/bfs/archive/d2e3f888d3db7d17179addcc1a23102b399613ff.jpg@672w_378h_1c_!web-home-common-cover.webp",
+						title:'【COS】小格蕾修12.21生日快乐！',
+						avator:'湫湫_QiuQiu',
+						plays:'8.3w'
 					}
 				],
-				src: 'http://flv4mp4.people.com.cn/videofile7/pvmsvideo/2020/12/25/SongHeLi_488c1b771d69704f8745972409f64528.mp4',
-
 				// 获取视频源
 				revideos: [],
-				videoUrl: []
+				
+				
+				// 视频弹幕组件
+				 src: '',
+				 danmuList: [],
+				 danmuValue: ''
 
 			}
 		},
+		onReady: function(res) {
+		        // #ifndef MP-ALIPAY
+		        this.videoContext = uni.createVideoContext('myVideo')
+		        // #endif
+		    },
+			
 		mounted() {
 
 
@@ -297,9 +324,31 @@
 					url:'/pages/index/index'
 				})
 			},
-			clickTodanmu() {
-				console.log("done");
-			},
+			// 视频弹幕组件
+			  sendDanmu: function() {
+			            this.videoContext.sendDanmu({
+			                text: this.danmuValue,
+			                color: this.getRandomColor()
+			            });
+			            this.danmuValue = '';
+			        },
+			        videoErrorCallback: function(e) {
+			            uni.showModal({
+			                content: e.target.errMsg,
+			                showCancel: false
+			            })
+			        },
+			        getRandomColor: function() {
+			            const rgb = []
+			            for (let i = 0; i < 3; ++i) {
+			                let color = Math.floor(Math.random() * 256).toString(16)
+			                color = color.length == 1 ? '0' + color : color
+			                rgb.push(color)
+			            }
+			            return '#' + rgb.join('')
+			        },
+					
+					// 控制详情的高度
 			gotoheight() {
 				var cheight = document.getElementById("conts").clientHeight;
 				if (cheight != 0) {
@@ -323,18 +372,18 @@
 			}
 		},
 		onPullDownRefresh() {
-			uni.request({
-				url: 'http://api.bilibili.cn/recommend',
-				method: 'GET',
-				data: {
-					page: Math.random() * 10 + 40,
-					pagesize: 4
-				},
-				success: (res) => {
-					this.videoUrl = res.data.list;
-					console.log(this.videoUrl1);
-				}
-			})
+			// uni.request({
+			// 	url: 'http://api.bilibili.cn/recommend',
+			// 	method: 'GET',
+			// 	data: {
+			// 		page: Math.random() * 10 + 40,
+			// 		pagesize: 4
+			// 	},
+			// 	success: (res) => {
+			// 		this.videoUrl = res.data.list;
+			// 		console.log(this.videoUrl1);
+			// 	}
+			// })
 			uni.stopPullDownRefresh();
 		}
 	}

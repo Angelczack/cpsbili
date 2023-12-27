@@ -6,6 +6,9 @@
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {
+		//深夜模式
+		"darkmode" : true,
+		"themeLocation" : "theme.json",
         /* 5+App特有相关 */
         "usingComponents" : true,
         "nvueCompiler" : "uni-app",
@@ -98,6 +101,8 @@
     "vueVersion" : "2",
     "h5" : {
         "title" : "H5",
+		// 深夜模式
+		"darkmode" : true,
         "devServer" : {
             "port" : 6065,
             // "https": false,

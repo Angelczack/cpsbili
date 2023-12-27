@@ -28,12 +28,20 @@
 		"path": "pages/index/index",
 		"style": {
 			"navigationStyle": "custom",
-			"enablePullDownRefresh": true
+			"enablePullDownRefresh": true,
+			"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
 		}
 	}, {
 		"path": "pages/shop/shop",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationStyle": "custom",
+			"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
 		}
 	}, {
 		"path": "pages/shop/ItemDetail",
@@ -48,22 +56,38 @@
 	}, {
 		"path": "pages/dongtai/dongtai",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationStyle": "custom",
+			"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
 		}
 	}, {
 		"path": "pages/my/my",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationStyle": "custom",
+			"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
 		}
 	}, {
 		"path": "pages/add/add",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationStyle": "custom",
+			"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
 		}
 	}, {
 		"path": "pages/setting/setting",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationStyle": "custom",
+			// "navigationStyle": "设置",
+			"navigationBarTextStyle": "white"
+			// "navigationBarTitleText": "设置",
+			// "navigationBarBackgroundColor": "#ff9bb9"
 		}
 	}, {
 		"path": "pages/video/video",
