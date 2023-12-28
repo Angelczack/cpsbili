@@ -127,11 +127,10 @@
 				<!-- create 结尾 -->
 			</view>
 
-
 			<!-- 游戏中心 -->
 			<view class="game">
 				<view class="game-top">
-					<view class="game-top-left">游戏中心</view>
+					<view class="game-top-left">推荐服务</view>
 					<view class="game-top-right">查看更多></view>
 				</view>
 
@@ -139,29 +138,7 @@
 					<block v-for="(item,index) in gameiconUrl" :key="index">
 
 						<view style="width: 80rpx; height: 80rpx;">
-							<image :src="item.src" style="width: 100%; height: 100%;" />
-							<view class="gameicon-word">{{item.word}}</view>
-						</view>
-
-					</block>
-
-				</view>
-			</view>
-
-
-
-			<!-- 游戏中心 -->
-			<view class="game">
-				<view class="game-top">
-					<view class="game-top-left">游戏中心</view>
-					<view class="game-top-right">查看更多></view>
-				</view>
-
-				<view class="gameicon">
-					<block v-for="(item,index) in gameiconUrl" :key="index">
-
-						<view style="width: 80rpx; height: 80rpx;">
-							<image :src="item.src" style="width: 100%; height: 100%;" />
+							<image :src="item.src" style="width: 100%; height:100%; margin: 0 auto;" />
 							<view class="gameicon-word">{{item.word}}</view>
 						</view>
 
@@ -173,9 +150,9 @@
 
 			<!-- 推荐服务 -->
 			<view class="tuijian">
-				<view class="tuijian-top">
-					<view class="tuijian-top-left">推荐服务</view>
-				</view>
+				<!-- <view class="tuijian-top"> -->
+					<!-- <view class="tuijian-top-left">推荐服务</view> -->
+				<!-- </view> -->
 
 				<view class="tuijianicon">
 					<block v-for="(item,index) in tuijianiconUrl" :key="index">
@@ -286,6 +263,7 @@
 					src: "/static/my/on.png",
 					title: "稍后再看"
 				}],
+				
 				createiconUrl: [{
 					src: "/static/my/light.png",
 					title: "创作首页"
@@ -299,12 +277,14 @@
 					src: "/static/my/qizhi.png",
 					title: "有奖活动"
 				}],
+				
 				tongzhiUrl: [
 					"博人传第一部完结纪念！失去一切的忍者，第二部预热！",
 					"大臣是铃芽的隐喻？《铃芽之旅》深度解读，新海诚的灾难哲学与人情温暖",
 					"国外专业音乐人如何评价《乌梅子酱》？",
 					"你们这群人食不食油饼哈哈哈哈哈哈哈哈哈哈哈哈！"
 				],
+				
 				gameiconUrl: [{
 					src: "/static/my/game-1.png",
 					word: "我的游戏"
@@ -319,30 +299,30 @@
 					word: "游戏礼包"
 				}],
 				tuijianiconUrl: [{
-					src: "/static/my/game-1.png",
-					word: "我的游戏"
+					src: "/static/my/tui-1.png",
+					word: "我的课程"
 				}, {
-					src: "/static/my/game-2.png",
-					word: "找游戏"
+					src: "/static/my/tui-2.png",
+					word: "看视频免流量"
 				}, {
-					src: "/static/my/game-3.png",
-					word: "游戏排行榜"
+					src: "/static/my/tui-3.png",
+					word: "个性装扮"
 				}, {
-					src: "/static/my/game-4.png",
-					word: "游戏礼包"
+					src: "/static/my/tui-4.png",
+					word: "我的钱包"
 				}],
 				gameiconUrl2: [{
-					src: "/static/my/game-1.png",
-					word: "我的游戏"
+					src: "",
+					word: "游戏中心"
 				}, {
-					src: "/static/my/game-2.png",
-					word: "找游戏"
+					src: "",
+					word: "会员购中心"
 				}, {
-					src: "/static/my/game-3.png",
-					word: "游戏排行榜"
+					src: "",
+					word:"我的直播"
 				}, {
-					src: "/static/my/game-4.png",
-					word: "游戏礼包"
+					src: "",
+					word: "漫画"
 				}],
 				moreUrl: [{
 					src: "/static/my/机器人1_robot-one.png",
@@ -565,7 +545,7 @@
 	/* 游戏中心 */
 	.game {
 		width: 100%;
-		height: 300rpx;
+		/* height: 300rpx; */
 		/* background-color: pink; */
 	}
 
@@ -618,7 +598,7 @@
 	/* 游戏中心 */
 	.tuijian {
 		width: 100%;
-		height: 300rpx;
+		/* height: 300rpx; */
 		/* background-color: pink; */
 	}
 
