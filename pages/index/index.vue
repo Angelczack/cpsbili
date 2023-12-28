@@ -596,6 +596,7 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 				this.swiperCurrent = current;
 				this.current = current;
 			},
+			
 			gotovideo(vlist) {
 				uni.navigateTo({
 					url: '/pages/video/video'
@@ -638,7 +639,8 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 			// 		console.log(this.videoUrl2);
 			// 	}
 			// })
-			// console.log(this.videoUrldemo1[0].id);			
+			// console.log(this.videoUrldemo1[0].id);
+					this.$u.randomArray(this.videoUrldemo1);
 			uni.stopPullDownRefresh();
 		},
 		onReachBottom: function() {

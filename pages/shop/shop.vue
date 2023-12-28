@@ -245,6 +245,19 @@
 						title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/53/4e/534ec45725c86754b9c42fb646f8be16.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
+								ItemImg:[],
+								// 定金
+								IpriceL:50,
+								// 全款
+								IpriceW:null,
+								// 尺寸
+								Isize:30
+							},
+								
+						]
 					},
 					{
 						price: 28,
