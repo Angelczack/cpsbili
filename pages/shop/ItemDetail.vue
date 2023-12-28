@@ -7,7 +7,7 @@
 		<view class="ItemImg">
 			<swiper style="width: 100%; height: 400px;" :indicator-dots="true" indicator-color="#fff"
 				indicator-active-color="#ff9bb9" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
-				<swiper-item v-for="(item,index) in ItemImgUrl" :key="index">
+				<swiper-item v-for="(item,index) in ItemImgUrl[0]" :key="index">
 					<view class="swiper-item">
 						<image :src="item.src"></image>
 					</view>
@@ -31,8 +31,8 @@
 		<view class="ItemBox">
 			<!-- 金额 -->
 			<view class="price">
-				<h3>定金 ￥48.3</h3>
-				<h5>全款 ￥322</h5>
+				<h3 v-show="Itemlists[0].IpriceL != null">定金 ￥{{Itemlists[0].IpriceL}}</h3>
+				<h5 v-show="Itemlists[0].IpriceW != null">全款 ￥{{Itemlists[0].IpriceW}}</h5>
 			</view>
 
 			<!-- 优惠信息 -->
@@ -46,7 +46,7 @@
 
 			<!-- 商品名称 -->
 			<view class="ItemName">
-				<span>GSAS 粘土人 缘之空 春日野穹 Q版手办</span>
+				<span>{{Itemlists[0].Ititle}}</span>
 			</view>
 		</view>
 
@@ -162,22 +162,7 @@
 			return {
 
 				// 轮播图信息
-				ItemImgUrl: [{
-						src: '/static/shop/1.PNG'
-					},
-					{
-						src: '/static/shop/2.PNG'
-					},
-					{
-						src: '/static/shop/3.PNG'
-					},
-					{
-						src: '/static/shop/4.PNG'
-					},
-					{
-						src: '/static/shop/5.PNG'
-					}
-				],
+				ItemImgUrl: [],
 				typesDigit: [{
 						title: '尺寸',
 						digit: '高约24.6cm'
@@ -207,9 +192,27 @@
 					{
 						src: '/static/shop/5.PNG'
 					}
-				]
+				],
+				// 获取商品信息数组
+				Itemlists:[]
 			}
 		},
+		mounted() {
+			// 获取商品的详细信息
+			uni.getStorage({
+				key: 'Itemlists',
+				success: (res) => {
+					this.Itemlists = res.data;
+					for(var i = 0; i < this.Itemlists.length; i++) {
+						this.ItemImgUrl[i] = this.Itemlists[i].ItemImg;
+					}
+					console.log(res.data);
+					console.log(this.ItemImgUrl);
+				}
+			})
+			
+		},
+		
 		methods: {
 			//返回商品页
 			goBackshopPages() {

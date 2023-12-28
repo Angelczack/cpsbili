@@ -160,7 +160,7 @@
 		<!-- <u-button @click="clear">清空列表</u-button> -->
 		<u-waterfall v-model="flowList" ref="uWaterfall">
 			<template v-slot:left="{leftList}">
-				<view class="demo-warter" v-for="(item, index) in leftList" :key="index" @click="gotoItemDetail">
+				<view class="demo-warter" v-for="(item, index) in leftList" :key="index" @click="gotoItemDetail(item.Itemlists)">
 					<!-- 警告：微信小程序中需要hx2.8.11版本才支持在template中结合其他组件，比如下方的lazy-load组件 -->
 					<u-lazy-load threshold="-450" border-radius="10" :image="'https://images.weserv.nl/?url=' + item.image" :index="index"></u-lazy-load>
 					<view class="demo-title">
@@ -177,7 +177,7 @@
 			</template>
 			
 			<template v-slot:right="{rightList}">
-				<view class="demo-warter" v-for="(item, index) in rightList" :key="index" @click="gotoItemDetail">
+				<view class="demo-warter" v-for="(item, index) in rightList" :key="index" @click="gotoItemDetail(item.Itemlists)">
 					<u-lazy-load threshold="-450" border-radius="10" :image="'https://images.weserv.nl/?url=' + item.image" :index="index"></u-lazy-load>
 					<view class="demo-title">
 						{{item.title}}
@@ -248,106 +248,543 @@
 						Itemlists:[
 							{
 								Ititle:'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-								ItemImg:[],
+								ItemImg:[{
+									src:'/static/shop/item-1/1-1.png'
+								},
+								{
+									src:'/static/shop/item-1/1-2.png'
+								},
+								{
+									src:'/static/shop/item-1/1-3.png'
+								},
+								{
+									src:'/static/shop/item-1/1-4.png'
+								},
+								{
+									src:'/static/shop/item-1/1-5.png'
+								}],
 								// 定金
 								IpriceL:50,
 								// 全款
 								IpriceW:null,
 								// 尺寸
-								Isize:30
-							},
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 								
-						]
 					},
 					{
 						price: 28,
 						title: 'bilibiliGoods 癸卯兔年系列 2233小电视 贴纸套装',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/mall/46/ff/46ff0890984088dcc08db60785964567.png',
+						Itemlists:[
+							{
+								Ititle:'bilibiliGoods 癸卯兔年系列 2233小电视 贴纸套装',
+								ItemImg:[{
+									src:'/static/shop/item-2/2-1.png'
+								},
+								{
+									src:'/static/shop/item-2/2-2.jpg'
+								},
+								{
+									src:'/static/shop/item-2/2-3.jpg'
+								},
+								{
+									src:'/static/shop/item-2/2-4.jpg'
+								},
+								{
+									src:'/static/shop/item-2/2-5.jpg'
+								}],
+								// 定金
+								IpriceL:null,
+								// 全款
+								IpriceW:25,
+								// 尺寸
+								Isize:45,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 75,
 						title: '哔哩哔哩 幻星集 2233 棉花娃娃站姿20CM',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/15/2b/152b59a67b29264fa816193d784af5f0.png',
+						Itemlists:[
+							{
+								Ititle:'哔哩哔哩 幻星集 2233 棉花娃娃站姿20CM',
+								ItemImg:[{
+									src:'/static/shop/item-3/3-1.jpg'
+								},
+								{
+									src:'/static/shop/item-3/3-2.jpg'
+								},
+								{
+									src:'/static/shop/item-3/3-3.jpg'
+								},
+								{
+									src:'/static/shop/item-3/3-4.jpg'
+								},
+								{
+									src:'/static/shop/item-3/3-5.jpg'
+								}],
+								// 定金
+								IpriceL:12,
+								// 全款
+								IpriceW:120,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 75,
 						title: 'BILIBILIGOODS 哔哩哔哩幻星集 2233 青幻之镰&星耀使魔 12周年纪念 手办 通常版',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/mall/30/d7/30d7132eb3afacefa77e16df39518cc9.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 哔哩哔哩幻星集 2233 青幻之镰&星耀使魔 12周年纪念 手办 通常版',
+								ItemImg:[{
+									src:'/static/shop/item-4/4-1.png'
+								},
+								{
+									src:'/static/shop/item-4/4-2.png'
+								},
+								{
+									src:'/static/shop/item-4/4-3.png'
+								},
+								{
+									src:'/static/shop/item-4/4-4.png'
+								},
+								{
+									src:'/static/shop/item-4/4-5.png'
+								}],
+								// 定金
+								IpriceL:null,
+								// 全款
+								IpriceW:75,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 12,
 						title: 'BILIBILIGOODS 2233 时空战姬系列 收藏闪卡',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/58/b5/58b50b56d0ce8c3b23d9ae245d89ac37.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 时空战姬系列 收藏闪卡',
+								ItemImg:[{
+									src:'/static/shop/item-5/5-1.png'
+								},
+								],
+								// 定金
+								IpriceL:null,
+								// 全款
+								IpriceW:12,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 299,
 						title: 'BANPRESTO ESPRESTO系列 哔哩哔哩 22 33 小电视 景品手办 附独家特典',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/mall/de/32/de320bbd58f651e7ba624340f83a65ce.png',
+						Itemlists:[
+							{
+								Ititle:'BANPRESTO ESPRESTO系列 哔哩哔哩 22 33 小电视 景品手办 附独家特典',
+								ItemImg:[{
+									src:'/static/shop/item-6/6-1.png'
+								},
+								{
+									src:'/static/shop/item-6/6-2.png'
+								},
+								{
+									src:'/static/shop/item-6/6-3.png'
+								},
+								{
+									src:'/static/shop/item-6/6-4.png'
+								},
+								{
+									src:'/static/shop/item-6/6-5.png'
+								}],
+								// 定金
+								IpriceL:299,
+								// 全款
+								IpriceW:299,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 789,
-						title: 'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
-						shop: 'bilibili会员购',
-						image: 'https://i0.hdslb.com/bfs/mall/mall/f3/e1/f3e1d557421d27832427eec17d101b07.png',
-					},
-					{
-						price: 231,
+						price: 19,
 						shop: 'bilibili会员购',
 						title: 'bilibiliGoods 癸卯兔年系列 2233 光栅徽章',
 						image: 'https://i0.hdslb.com/bfs/mall/mall/46/6c/466cc27a69c042f3c8331f27048e67b1.png',
+						Itemlists:[
+							{
+								Ititle:'bilibiliGoods 癸卯兔年系列 2233 光栅徽章',
+								ItemImg:[{
+									src:'/static/shop/item-7/7-1.png'
+								},
+								{
+									src:'/static/shop/item-7/7-2.jpg'
+								},
+								{
+									src:'/static/shop/item-7/7-3.jpg'
+								},
+								{
+									src:'/static/shop/item-7/7-4.jpg'
+								},
+								{
+									src:'/static/shop/item-7/7-5.jpg'
+								}],
+								// 定金
+								IpriceL:19,
+								// 全款
+								IpriceW:19,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:19,
+								//材质
+								Ithin:'金属'
+							}]
 					},
 					{
 						price: 23,
 						shop: 'bilibili会员购',
 						title: 'BILIBILIGOODS 2233 睡衣派对系列 金属徽章套装',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/09/98/0998becd19f08e1688a53c023d85bdb5.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 睡衣派对系列 金属徽章套装',
+								ItemImg:[{
+									src:'/static/shop/item-8/8-1.png'
+								},
+								{
+									src:'/static/shop/item-8/8-2.jpg'
+								},
+								{
+									src:'/static/shop/item-8/8-3.jpg'
+								},
+								{
+									src:'/static/shop/item-8/8-4.jpg'
+								},
+								{
+									src:'/static/shop/item-8/8-5.jpg'
+								}],
+								// 定金
+								IpriceL:23,
+								// 全款
+								IpriceW:23,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 77,
 						shop: 'bilibili会员购',
 						title: 'bilibiliGoods 癸卯兔年系列 小电视 毛绒挂件&抱枕',
-						image: 'https://i0.hdslb.com/bfs/mall/vendor/2a/1d/2a1d21d37e2dc4e51b908869fe9b8301.png',
+						image: 'https://i0.hdslb.com/bfs/mall/vendor/be/2f/be2f5b8e949a87ddc2dacf1e9d96d0f3.png',
+						Itemlists:[
+							{
+								Ititle:'bilibiliGoods 癸卯兔年系列 小电视 毛绒挂件&抱枕',
+								ItemImg:[{
+									src:'/static/shop/item-9/9-1.png'
+								},
+								{
+									src:'/static/shop/item-9/9-2.jpg'
+								},
+								{
+									src:'/static/shop/item-9/9-3.jpg'
+								},
+								{
+									src:'/static/shop/item-9/9-4.jpg'
+								},
+								{
+									src:'/static/shop/item-9/9-5.jpg'
+								}],
+								// 定金
+								IpriceL:77,
+								// 全款
+								IpriceW:77,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:77,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 15,
+						price: 122,
 						title: 'BILIBILIGOODS 2233 人生百戏系列 高帮帆布鞋',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/71/fe/71fe2c2683130da2fbfcfc18fac0cd89.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 人生百戏系列 高帮帆布鞋',
+								ItemImg:[{
+									src:'/static/shop/item-10/10-1.png'
+								},
+								{
+									src:'/static/shop/item-10/10-2.jpg'
+								},
+								{
+									src:'/static/shop/item-10/10-3.jpg'
+								},
+								{
+									src:'/static/shop/item-10/10-4.jpg'
+								},
+								{
+									src:'/static/shop/item-10/10-5.jpg'
+								}],
+								// 定金
+								IpriceL:122,
+								// 全款
+								IpriceW:122,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:122,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
 						price: 58,
 						title: '无锡·ACG乐鱼 · 动漫宅舞大赛',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/openplatform/202305/Ca8DpIq71684724120367.jpeg@350w_466h.jpeg',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 时空战姬系列 亚克力挂件',
+								ItemImg:[{
+									src:'/static/shop/1.PNG'
+								},
+								{
+									src:'/static/shop/2.PNG'
+								},
+								{
+									src:'/static/shop/3.PNG'
+								},
+								{
+									src:'/static/shop/4.PNG'
+								},
+								{
+									src:'/static/shop/5.PNG'
+								}],
+								// 定金
+								IpriceL:50,
+								// 全款
+								IpriceW:null,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:244,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 234,
+						price: 23,
 						title: '哔哩哔哩 小电视2233 口袋本贴纸便签套装',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/c4/4b/c44bcf11f7391b1636032c14842cf4c7.png',
+						Itemlists:[
+							{
+								Ititle:'哔哩哔哩 小电视2233 口袋本贴纸便签套装',
+								ItemImg:[{
+									src:'/static/shop/item-12/12-1.png'
+								},
+								{
+									src:'/static/shop/item-12/12-2.jpg'
+								},
+								{
+									src:'/static/shop/item-12/12-3.jpg'
+								},
+								{
+									src:'/static/shop/item-12/12-4.jpg'
+								},
+								{
+									src:'/static/shop/item-12/12-5.jpg'
+								}],
+								// 定金
+								IpriceL:23,
+								// 全款
+								IpriceW:23,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:23,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 924,
+						price: 657,
 						title: 'BILIBILIGOODS 2233 时空战姬系列 魔方',
 						shop: 'bilibili会员购',
-						image: 'https://i0.hdslb.com/bfs/mall/vendor/55/dc/55dc7bedb8f1ddf98606256c091b07c6.png',
+						image: 'https://i0.hdslb.com/bfs/mall/vendor/d0/18/d018135a311c7643cf679114f9cb7fd4.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 时空战姬系列 魔方',
+								ItemImg:[{
+									src:'/static/shop/item-13/13-1.png'
+								},
+								{
+									src:'/static/shop/item-13/13-2.jpg'
+								},
+								{
+									src:'/static/shop/item-13/13-3.jpg'
+								},
+								{
+									src:'/static/shop/item-13/13-4.jpg'
+								},
+								{
+									src:'/static/shop/item-13/13-5.jpg'
+								}
+								],
+								// 定金
+								IpriceL:233,
+								// 全款
+								IpriceW:657,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:680,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 25,
-						title: '哔哩哔哩 2233下午茶系列 色纸',
+						price: 899,
+						title: 'BeBox 2233×中央芭蕾舞团联名手办 Swan Lake Ver. 附特典 哔哩哔哩独家 含AR展示',
 						shop: 'bilibili会员购',
-						image: 'https://i0.hdslb.com/bfs/mall/mall/7f/ee/7fee78a7aaf0d601aa676b0c4e979e6c.png',
+						image: 'https://i0.hdslb.com/bfs/mall/mall/d4/ad/d4add944955c7fc4ac5ba1a45433ba0c.png',
+						Itemlists:[
+							{
+								Ititle:'BeBox 2233×中央芭蕾舞团联名手办 Swan Lake Ver. 附特典 哔哩哔哩独家 含AR展示',
+								ItemImg:[{
+									src:'/static/shop/item-14/14-1.png'
+								},
+								{
+									src:'/static/shop/item-14/14-2.jpg'
+								},
+								{
+									src:'/static/shop/item-14/14-3.jpg'
+								},
+								{
+									src:'/static/shop/item-14/14-4.jpg'
+								},
+								{
+									src:'/static/shop/item-14/14-5.jpg'
+								}],
+								// 定金
+								IpriceL:899,
+								// 全款
+								IpriceW:899,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:899,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 					{
-						price: 103,
+						price: 249,
 						title: 'BILIBILIGOODS 2233 时空战姬 真无线TWS降噪蓝牙耳机 M2',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/vendor/b3/26/b3260bd074300caae51a14a8381495fa.png',
+						Itemlists:[
+							{
+								Ititle:'BILIBILIGOODS 2233 时空战姬 真无线TWS降噪蓝牙耳机 M2',
+								ItemImg:[{
+									src:'/static/shop/item-15/15-1.png'
+								},
+								{
+									src:'/static/shop/item-15/15-2.jpg'
+								},
+								{
+									src:'/static/shop/item-15/15-3.jpg'
+								},
+								{
+									src:'/static/shop/item-15/15-4.jpg'
+								},
+								{
+									src:'/static/shop/item-15/15-5.jpg'
+								}],
+								// 定金
+								IpriceL:249,
+								// 全款
+								IpriceW:249,
+								// 尺寸
+								Isize:30,
+								// 比例
+								ptp:'',
+								//官方价
+								norprice:249,
+								//材质
+								Ithin:'PVC'
+							}]
 					},
 				]		
 			}
@@ -365,10 +802,20 @@
 		},
 		methods: {
 			// 跳转到商品详情页
-			gotoItemDetail() {
+			gotoItemDetail(Itemlists,ItemImg) {
 				uni.navigateTo({
 					url:'/pages/shop/ItemDetail'
 				})
+				// console.log(Itemlists)
+				uni.setStorage({
+					key: 'Itemlists',
+					data: Itemlists,
+					success: (res) => {
+						console.log(res);
+					}
+				})
+				
+				
 			},
 			// 跳转到我的页面
 			ToMy() {
