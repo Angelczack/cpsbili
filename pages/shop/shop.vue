@@ -10,13 +10,13 @@
 			<view class="top-right">
 				<view class="icon-box">
 					<view style="width: 40rpx; height: 40rpx;">
-						<image src="/static/shop/box.png" mode="" style="width: 100%; height: 100%;" />
+						<image src="/static/shop/box.png" style="width: 100%; height: 100%;" @click="ToOrders"/>
 					</view>
-					<view style="width: 40rpx; height: 40rpx;" @click="ToShoppingcart">
-						<image src="/static/shop/shopping.png" mode="" style="width: 100%; height: 100%;" />
+					<view style="width: 40rpx; height: 40rpx;" >
+						<image src="/static/shop/shopping.png" style="width: 100%; height: 100%;" @click="ToShoppingcart"/>
 					</view>
-					<view style="width: 40rpx; height: 40rpx;" @click="ToMy">
-						<image src="/static/shop/me.png" mode="" style="width: 100%; height: 100%;" />
+					<view style="width: 40rpx; height: 40rpx;" >
+						<image src="/static/shop/me.png" style="width: 100%; height: 100%;" @click="ToMy"/>
 					</view>
 					<!-- icon-box结尾 -->
 				</view>
@@ -353,7 +353,7 @@
 							}]
 					},
 					{
-						price: 75,
+						price: 1899,
 						title: 'BILIBILIGOODS 哔哩哔哩幻星集 2233 青幻之镰&星耀使魔 12周年纪念 手办 通常版',
 						shop: 'bilibili会员购',
 						image: 'https://i0.hdslb.com/bfs/mall/mall/30/d7/30d7132eb3afacefa77e16df39518cc9.png',
@@ -376,9 +376,9 @@
 									src:'/static/shop/item-4/4-5.png'
 								}],
 								// 定金
-								IpriceL:null,
+								IpriceL:356,
 								// 全款
-								IpriceW:75,
+								IpriceW:1899,
 								// 尺寸
 								Isize:30,
 								// 比例
@@ -821,6 +821,12 @@
 			ToMy() {
 				uni.switchTab({
 					url:'/pages/my/my'
+				})
+			},
+			//跳转到订单页
+			ToOrders() {
+				uni.navigateTo({
+					url:'/pages/shop/orders'
 				})
 			},
 			addRandomData() {

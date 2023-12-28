@@ -94,11 +94,26 @@
 		"style": {
 			"navigationStyle": "custom"
 		}
-	}, {
+	},{
 		"path": "pages/demo/demo",
 		"style": {
 			"navigationStyle": "custom",
 			"enablePullDownRefresh": true
+		}
+	},{
+		"path": "pages/shop/orders",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/shop/Toaddr",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/shop/addSite",
+		"style": {
+			"navigationStyle": "custom"
 		}
 	}],
 	"globalStyle": {

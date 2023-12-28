@@ -248,6 +248,7 @@
 	} from "vue"
 import random from "../../uni_modules/uview-ui/libs/function/random";
 	import videoVue from "../video/video.vue";
+	import request from "../utils/request.js"
 	export default {
 		name: "index",
 		data() {
@@ -510,7 +511,9 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 					word1: "约会大作战 第四季",
 					src2: "https://i0.hdslb.com/bfs/archive/f9b7f81ca611cd4cff739ba7a28c59522807f703.jpg@560w_312h_!web-ogv-anime-horizontal-card.webp",
 					word2: "小林家的龙女仆 第二季"
-				}]
+				}],
+				// 用户信息
+				userInfo:{}
 			}
 		},
 		onLoad() {
@@ -570,6 +573,18 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 					console.log(res.data);
 					this.videoUrl2 = res.data.archives;
 					console.log(this.videoUrl2);
+				}
+			})
+			
+			uni.request({
+				url:'/api/user',
+				method:'GET',
+				data:{
+					
+				},
+				success:(res) => {
+					console.log(res.data.records);
+					
 				}
 			})
 		},
@@ -672,7 +687,7 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 	}
 
 	.tbtns li:hover {
-		background-color: rgb(254, 169, 255);
+		background-color: #ff9bb9;
 	}
 
 
@@ -691,17 +706,17 @@ import random from "../../uni_modules/uview-ui/libs/function/random";
 	.searchbar {
 		width: 100%;
 		height: 120px;
-		background-color: #fff;
+		background-color: #ff9bb9;
 	}
 
 	/* 用户头像 */
 	.user-img {
-		width: 50px;
-		height: 50px;
+		width: 45px;
+		height: 45px;
 		float: left;
 		margin-left: 15px;
 		margin-right: 15px;
-		margin-top: 50px;
+		margin-top: 55px;
 	}
 
 	.user-img>image {

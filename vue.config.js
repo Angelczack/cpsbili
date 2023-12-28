@@ -1,8 +1,8 @@
 module.exports = {
 	devServer:{
 		proxy:{
-			'/':{
-				target:'https://api.bilibili.com/x/web-interface/dynamic/region',
+			'/api':{
+				target:'http://localhost:9090',
 				changeOrigin:true
 			}
 		}
